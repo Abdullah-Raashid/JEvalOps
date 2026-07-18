@@ -1,0 +1,73 @@
+{
+  "model_name": "rinna/japanese-gpt2-small",
+  "adapter_dir": "checkpoints/rinna_japanese_gpt2_small_lora_mps",
+  "eval_examples": 50,
+  "baseline_quality": 0.35333333333333333,
+  "lora_quality": 0.5506666666666667,
+  "absolute_quality_delta": 0.19733333333333342,
+  "relative_quality_delta_percent": 55.849056603773604,
+  "baseline_p95_latency_seconds": 0.5893565840015071,
+  "lora_p95_latency_seconds": 0.6038485420012876,
+  "p95_latency_delta_seconds": 0.014491957999780425,
+  "baseline_error_count": 50,
+  "lora_error_count": 23,
+  "promotion": {
+    "promoted": false,
+    "checks": {
+      "quality_improves": true,
+      "no_critical_task_drop": true,
+      "p95_latency_within_limit": true,
+      "schema_compliance_above_floor": false
+    },
+    "quality_delta": 0.19733333333333342
+  },
+  "training": {
+    "base_model": "rinna/japanese-gpt2-small",
+    "adapter_path": "checkpoints/rinna_japanese_gpt2_small_lora_mps",
+    "train_records": 300,
+    "validation_records": 100,
+    "training_seconds": 18.096214999999575,
+    "final_train_loss": 0.021081937476992607,
+    "mean_train_loss": 0.7618977174907923,
+    "peak_cuda_memory_mb": null,
+    "peak_accelerator_memory_mb": 515.078125,
+    "accelerator": {
+      "requested_device": "mps",
+      "resolved_device": "mps",
+      "accelerator": "apple_metal_mps",
+      "cuda_available": false,
+      "mps_available": true,
+      "apple_metal_enabled": true,
+      "mps_fallback_enabled": true
+    },
+    "lora": {
+      "r": 16,
+      "alpha": 32,
+      "dropout": 0.05,
+      "target_modules": [
+        "c_attn",
+        "c_proj",
+        "c_fc"
+      ],
+      "resolved_target_modules": [
+        "c_attn",
+        "c_proj",
+        "c_fc"
+      ]
+    },
+    "training": {
+      "learning_rate": 0.001,
+      "max_steps": 200,
+      "per_device_train_batch_size": 1,
+      "gradient_accumulation_steps": 4,
+      "max_length": 192,
+      "seed": 42,
+      "device": "mps",
+      "mixed_precision": "no",
+      "enable_mps_fallback": true,
+      "logging_steps": 10,
+      "use_fast_tokenizer": false,
+      "resolved_device": "mps"
+    }
+  }
+}

@@ -1,0 +1,1795 @@
+{
+  "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+  "backend": "huggingface_transformers",
+  "quality_score": 0.5506666666666667,
+  "by_task": {
+    "business_rewriting": 0.9733333333333334,
+    "information_extraction": 0.0,
+    "summarization": 0.0,
+    "grounded_qa": 0.8533333333333335,
+    "robustness": 0.9266666666666667
+  },
+  "efficiency": {
+    "mean_latency_seconds": 0.27835260750020097,
+    "p95_latency_seconds": 0.6038485420012876,
+    "mean_tokens_per_second": 77.30625528995593
+  },
+  "records": [
+    {
+      "example_id": "business_6001",
+      "task": "business_rewriting",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "明日の打ち合わせにつきまして、ご都合が難しい場合はお知らせいただけますでしょうか。",
+      "reference_answer": "明日の打ち合わせにつきまして、ご都合が難しい場合はお知らせいただけますでしょうか。",
+      "metrics": {
+        "quality_score": 1.0,
+        "correctness": 5,
+        "naturalness": 5,
+        "politeness": 5,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 5.0,
+        "exact_match": 1.0
+      },
+      "efficiency": {
+        "text": "明日の打ち合わせにつきまして、ご都合が難しい場合はお知らせいただけますでしょうか。",
+        "latency_seconds": 0.3792460829990887,
+        "time_to_first_token": 0.3792460829990887,
+        "output_tokens": 21,
+        "tokens_per_second": 55.37301752448281,
+        "peak_memory_mb": 431.9404296875,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.16832697011753056
+    },
+    {
+      "example_id": "information_6001",
+      "task": "information_extraction",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "で抽出した参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を",
+      "reference_answer": {
+        "company": "東都システムズ",
+        "meeting_date": "2026-09-14",
+        "meeting_time": "10:30",
+        "meeting_type": "オンライン",
+        "required_action": "参加可否を返信"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "で抽出した参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を",
+        "latency_seconds": 0.6285520420005923,
+        "time_to_first_token": 0.6285520420005923,
+        "output_tokens": 48,
+        "tokens_per_second": 76.36599166430639,
+        "peak_memory_mb": 431.94384765625,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "summarization_6001",
+      "task": "summarization",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "{\"summary\": \"法人向け",
+      "reference_answer": {
+        "action_items": [
+          {
+            "deadline": "2026-09-20",
+            "owner": "田中",
+            "task": "評価基準を整理してレビュー表を共有"
+          }
+        ],
+        "decisions": [
+          "部署共通のレビュー表を作成する"
+        ],
+        "summary": "法人向けFAQの回答品質を揃えるため、評価基準を整理する。"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "{\"summary\": \"法人向け",
+        "latency_seconds": 0.16601254099987273,
+        "time_to_first_token": 0.16601254099987273,
+        "output_tokens": 12,
+        "tokens_per_second": 72.28369572398269,
+        "peak_memory_mb": 431.94287109375,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "grounded_6001",
+      "task": "grounded_qa",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "いいえ、消耗品は保証対象外です。",
+      "reference_answer": "いいえ、消耗品は保証対象外です。",
+      "metrics": {
+        "quality_score": 0.9333333333333333,
+        "correctness": 5,
+        "naturalness": 5,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 4.666666666666667,
+        "exact_match": 1.0
+      },
+      "efficiency": {
+        "text": "いいえ、消耗品は保証対象外です。",
+        "latency_seconds": 0.1647458750012447,
+        "time_to_first_token": 0.1647458750012447,
+        "output_tokens": 12,
+        "tokens_per_second": 72.83945652605466,
+        "peak_memory_mb": 431.94287109375,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.18263211354784076
+    },
+    {
+      "example_id": "robustness_6001",
+      "task": "robustness",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "レスポンスが 500 になりました",
+      "reference_answer": "API レスポンスが 500 になりました",
+      "metrics": {
+        "quality_score": 0.8666666666666666,
+        "correctness": 4,
+        "naturalness": 4,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 4.333333333333333,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "レスポンスが 500 になりました",
+        "latency_seconds": 0.13932050000039453,
+        "time_to_first_token": 0.13932050000039453,
+        "output_tokens": 10,
+        "tokens_per_second": 71.77694596252297,
+        "peak_memory_mb": 431.9404296875,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.17529917006411833
+    },
+    {
+      "example_id": "business_6002",
+      "task": "business_rewriting",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "請求書のご送付状況につきまして、念のため確認させていただけますでしょうか。",
+      "reference_answer": "請求書のご送付状況につきまして、念のため確認させていただけますでしょうか。",
+      "metrics": {
+        "quality_score": 1.0,
+        "correctness": 5,
+        "naturalness": 5,
+        "politeness": 5,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 5.0,
+        "exact_match": 1.0
+      },
+      "efficiency": {
+        "text": "請求書のご送付状況につきまして、念のため確認させていただけますでしょうか。",
+        "latency_seconds": 0.2694745420012623,
+        "time_to_first_token": 0.2694745420012623,
+        "output_tokens": 21,
+        "tokens_per_second": 77.92943943439981,
+        "peak_memory_mb": 431.9404296875,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.17856575339275513
+    },
+    {
+      "example_id": "information_6002",
+      "task": "information_extraction",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "で抽出した{\"company\": \"青葉物流\", \"meeting_date\": \"2026-10-22\", \"meeting_time\": \"16:00\", \"meeting_type",
+      "reference_answer": {
+        "company": "青葉物流",
+        "meeting_date": "2026-10-22",
+        "meeting_time": "16:00",
+        "meeting_type": "オンライン",
+        "required_action": "参加可否を返信"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "で抽出した{\"company\": \"青葉物流\", \"meeting_date\": \"2026-10-22\", \"meeting_time\": \"16:00\", \"meeting_type",
+        "latency_seconds": 0.6255077090008854,
+        "time_to_first_token": 0.6255077090008854,
+        "output_tokens": 48,
+        "tokens_per_second": 76.73766335617145,
+        "peak_memory_mb": 431.94384765625,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "summarization_6002",
+      "task": "summarization",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "{\"summary\": \"法人向け",
+      "reference_answer": {
+        "action_items": [
+          {
+            "deadline": "2026-10-31",
+            "owner": "鈴木",
+            "task": "評価基準を整理してレビュー表を共有"
+          }
+        ],
+        "decisions": [
+          "部署共通のレビュー表を作成する"
+        ],
+        "summary": "法人向けFAQの回答品質を揃えるため、評価基準を整理する。"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "{\"summary\": \"法人向け",
+        "latency_seconds": 0.16141212499860558,
+        "time_to_first_token": 0.16141212499860558,
+        "output_tokens": 12,
+        "tokens_per_second": 74.34385737814719,
+        "peak_memory_mb": 431.94287109375,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "grounded_6002",
+      "task": "grounded_qa",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "利用方針では、利用目的を特定して回答してください。",
+      "reference_answer": "いいえ、入力してはなりません。",
+      "metrics": {
+        "quality_score": 0.6666666666666667,
+        "correctness": 2,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 3.3333333333333335,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "利用方針では、利用目的を特定して回答してください。",
+        "latency_seconds": 0.20758050000040384,
+        "time_to_first_token": 0.20758050000040384,
+        "output_tokens": 15,
+        "tokens_per_second": 72.26112279318538,
+        "peak_memory_mb": 431.9404296875,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.1248363459984923
+    },
+    {
+      "example_id": "robustness_6002",
+      "task": "robustness",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "ミーティングは明日で、担当は佐藤です。",
+      "reference_answer": "ミーティングは明日で、担当は佐藤です。",
+      "metrics": {
+        "quality_score": 0.9333333333333333,
+        "correctness": 5,
+        "naturalness": 5,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 4.666666666666667,
+        "exact_match": 1.0
+      },
+      "efficiency": {
+        "text": "ミーティングは明日で、担当は佐藤です。",
+        "latency_seconds": 0.14770674999999756,
+        "time_to_first_token": 0.14770674999999756,
+        "output_tokens": 12,
+        "tokens_per_second": 81.24205562711386,
+        "peak_memory_mb": 431.94287109375,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.1865929159716729
+    },
+    {
+      "example_id": "business_6003",
+      "task": "business_rewriting",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "納期に遅れが生じる見込みとなり、誠に申し訳ございません。状況と今後の対応について速やかにご共有いたします。",
+      "reference_answer": "納期に遅れが生じる見込みとなり、誠に申し訳ございません。状況と今後の対応について速やかにご共有いたします。",
+      "metrics": {
+        "quality_score": 1.0,
+        "correctness": 5,
+        "naturalness": 5,
+        "politeness": 5,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 5.0,
+        "exact_match": 1.0
+      },
+      "efficiency": {
+        "text": "納期に遅れが生じる見込みとなり、誠に申し訳ございません。状況と今後の対応について速やかにご共有いたします。",
+        "latency_seconds": 0.34294429200053855,
+        "time_to_first_token": 0.34294429200053855,
+        "output_tokens": 28,
+        "tokens_per_second": 81.64591350001541,
+        "peak_memory_mb": 431.94287109375,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.17121881265831457
+    },
+    {
+      "example_id": "information_6003",
+      "task": "information_extraction",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "で抽出した参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を",
+      "reference_answer": {
+        "company": "未来バイオ",
+        "meeting_date": "2026-11-05",
+        "meeting_time": "09:00",
+        "meeting_type": "オンライン",
+        "required_action": "参加可否を返信"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "で抽出した参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を",
+        "latency_seconds": 0.6003094999996392,
+        "time_to_first_token": 0.6003094999996392,
+        "output_tokens": 48,
+        "tokens_per_second": 79.95875460912887,
+        "peak_memory_mb": 431.94384765625,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "summarization_6003",
+      "task": "summarization",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "{\"summary\": \"法人向け",
+      "reference_answer": {
+        "action_items": [
+          {
+            "deadline": "2026-11-15",
+            "owner": "高橋",
+            "task": "評価基準を整理してレビュー表を共有"
+          }
+        ],
+        "decisions": [
+          "部署共通のレビュー表を作成する"
+        ],
+        "summary": "法人向けFAQの回答品質を揃えるため、評価基準を整理する。"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "{\"summary\": \"法人向け",
+        "latency_seconds": 0.1681622910000442,
+        "time_to_first_token": 0.1681622910000442,
+        "output_tokens": 12,
+        "tokens_per_second": 71.35963674517758,
+        "peak_memory_mb": 431.94287109375,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "grounded_6003",
+      "task": "grounded_qa",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "本文には海外からの勤務可否は記載されていません。",
+      "reference_answer": "本文には海外からの勤務可否は記載されていません。",
+      "metrics": {
+        "quality_score": 0.9333333333333333,
+        "correctness": 5,
+        "naturalness": 5,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 4.666666666666667,
+        "exact_match": 1.0
+      },
+      "efficiency": {
+        "text": "本文には海外からの勤務可否は記載されていません。",
+        "latency_seconds": 0.20424987499973213,
+        "time_to_first_token": 0.20424987499973213,
+        "output_tokens": 15,
+        "tokens_per_second": 73.43945742938483,
+        "peak_memory_mb": 431.9404296875,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.17529927510825052
+    },
+    {
+      "example_id": "robustness_6003",
+      "task": "robustness",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "差分はありません。どちらも300万円を表しています。",
+      "reference_answer": "差分はありません。どちらも300万円を表しています。",
+      "metrics": {
+        "quality_score": 0.9333333333333333,
+        "correctness": 5,
+        "naturalness": 5,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 4.666666666666667,
+        "exact_match": 1.0
+      },
+      "efficiency": {
+        "text": "差分はありません。どちらも300万円を表しています。",
+        "latency_seconds": 0.1743361669996375,
+        "time_to_first_token": 0.1743361669996375,
+        "output_tokens": 13,
+        "tokens_per_second": 74.56857761491929,
+        "peak_memory_mb": 431.9404296875,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.18064381803918825
+    },
+    {
+      "example_id": "business_6004",
+      "task": "business_rewriting",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "資料をご確認のうえ、ご返信いただけますと幸いです。",
+      "reference_answer": "お手数をおかけいたしますが、資料をご確認のうえ、ご返信いただけますと幸いです。",
+      "metrics": {
+        "quality_score": 0.8666666666666666,
+        "correctness": 3,
+        "naturalness": 3,
+        "politeness": 5,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 4.333333333333333,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "資料をご確認のうえ、ご返信いただけますと幸いです。",
+        "latency_seconds": 0.29079820799961453,
+        "time_to_first_token": 0.29079820799961453,
+        "output_tokens": 20,
+        "tokens_per_second": 68.77621474210223,
+        "peak_memory_mb": 431.94287109375,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.15268800642153849
+    },
+    {
+      "example_id": "information_6004",
+      "task": "information_extraction",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "xample株式会社より、2026-08-03 14:00からオンラインで採用面談を実施したいとの連絡。参加可否を返信する。",
+      "reference_answer": {
+        "company": "Example株式会社",
+        "meeting_date": "2026-08-03",
+        "meeting_time": "14:00",
+        "meeting_type": "オンライン",
+        "required_action": "参加可否を返信"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "xample株式会社より、2026-08-03 14:00からオンラインで採用面談を実施したいとの連絡。参加可否を返信する。",
+        "latency_seconds": 0.4598694169999362,
+        "time_to_first_token": 0.4598694169999362,
+        "output_tokens": 34,
+        "tokens_per_second": 73.9340315818495,
+        "peak_memory_mb": 431.94384765625,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "summarization_6004",
+      "task": "summarization",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "{\"summary\": \"法人向け",
+      "reference_answer": {
+        "action_items": [
+          {
+            "deadline": "2026-08-10",
+            "owner": "佐藤",
+            "task": "評価基準を整理してレビュー表を共有"
+          }
+        ],
+        "decisions": [
+          "部署共通のレビュー表を作成する"
+        ],
+        "summary": "法人向けFAQの回答品質を揃えるため、評価基準を整理する。"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "{\"summary\": \"法人向け",
+        "latency_seconds": 0.16364791600062745,
+        "time_to_first_token": 0.16364791600062745,
+        "output_tokens": 12,
+        "tokens_per_second": 73.32815652815273,
+        "peak_memory_mb": 431.94287109375,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "grounded_6004",
+      "task": "grounded_qa",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "利用日から30日以内に申請する必要があります。",
+      "reference_answer": "利用日から30日以内に申請する必要があります。",
+      "metrics": {
+        "quality_score": 0.9333333333333333,
+        "correctness": 5,
+        "naturalness": 5,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 4.666666666666667,
+        "exact_match": 1.0
+      },
+      "efficiency": {
+        "text": "利用日から30日以内に申請する必要があります。",
+        "latency_seconds": 0.1749142920016311,
+        "time_to_first_token": 0.1749142920016311,
+        "output_tokens": 12,
+        "tokens_per_second": 68.60502856958136,
+        "peak_memory_mb": 431.94287109375,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.180528799443667
+    },
+    {
+      "example_id": "robustness_6004",
+      "task": "robustness",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "{\"date\": \"2026年7月18日\", \"amount_jpy\": \"3000000\"}",
+      "reference_answer": {
+        "amount_jpy": "3000000",
+        "date": "2026年7月18日"
+      },
+      "metrics": {
+        "quality_score": 1.0,
+        "json_validity": 1.0,
+        "schema_compliance": 1.0,
+        "field_accuracy": 1.0
+      },
+      "efficiency": {
+        "text": "{\"date\": \"2026年7月18日\", \"amount_jpy\": \"3000000\"}",
+        "latency_seconds": 0.38237291599944,
+        "time_to_first_token": 0.38237291599944,
+        "output_tokens": 31,
+        "tokens_per_second": 81.07268769016423,
+        "peak_memory_mb": 431.9404296875,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.16809524691383348
+    },
+    {
+      "example_id": "business_6005",
+      "task": "business_rewriting",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "明日の打ち合わせにつきまして、ご都合が難しい場合はお知らせいただけますでしょうか。",
+      "reference_answer": "明日の打ち合わせにつきまして、ご都合が難しい場合はお知らせいただけますでしょうか。",
+      "metrics": {
+        "quality_score": 1.0,
+        "correctness": 5,
+        "naturalness": 5,
+        "politeness": 5,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 5.0,
+        "exact_match": 1.0
+      },
+      "efficiency": {
+        "text": "明日の打ち合わせにつきまして、ご都合が難しい場合はお知らせいただけますでしょうか。",
+        "latency_seconds": 0.26105945800009067,
+        "time_to_first_token": 0.26105945800009067,
+        "output_tokens": 21,
+        "tokens_per_second": 80.4414448757214,
+        "peak_memory_mb": 431.9404296875,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.1795792717961469
+    },
+    {
+      "example_id": "information_6005",
+      "task": "information_extraction",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "で抽出した参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を",
+      "reference_answer": {
+        "company": "東都システムズ",
+        "meeting_date": "2026-09-14",
+        "meeting_time": "10:30",
+        "meeting_type": "オンライン",
+        "required_action": "参加可否を返信"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "で抽出した参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を",
+        "latency_seconds": 0.5932152920013323,
+        "time_to_first_token": 0.5932152920013323,
+        "output_tokens": 48,
+        "tokens_per_second": 80.91497412020895,
+        "peak_memory_mb": 431.94384765625,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "summarization_6005",
+      "task": "summarization",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "{\"summary\": \"法人向け",
+      "reference_answer": {
+        "action_items": [
+          {
+            "deadline": "2026-09-20",
+            "owner": "田中",
+            "task": "評価基準を整理してレビュー表を共有"
+          }
+        ],
+        "decisions": [
+          "部署共通のレビュー表を作成する"
+        ],
+        "summary": "法人向けFAQの回答品質を揃えるため、評価基準を整理する。"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "{\"summary\": \"法人向け",
+        "latency_seconds": 0.16438395899967873,
+        "time_to_first_token": 0.16438395899967873,
+        "output_tokens": 12,
+        "tokens_per_second": 72.99982354131922,
+        "peak_memory_mb": 431.94287109375,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "grounded_6005",
+      "task": "grounded_qa",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "いいえ、消耗品は保証対象外です。",
+      "reference_answer": "いいえ、消耗品は保証対象外です。",
+      "metrics": {
+        "quality_score": 0.9333333333333333,
+        "correctness": 5,
+        "naturalness": 5,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 4.666666666666667,
+        "exact_match": 1.0
+      },
+      "efficiency": {
+        "text": "いいえ、消耗品は保証対象外です。",
+        "latency_seconds": 0.16043949999948381,
+        "time_to_first_token": 0.16043949999948381,
+        "output_tokens": 12,
+        "tokens_per_second": 74.79454872421448,
+        "peak_memory_mb": 431.94287109375,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.18357777023494506
+    },
+    {
+      "example_id": "robustness_6005",
+      "task": "robustness",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "レスポンスが 500 になりました",
+      "reference_answer": "API レスポンスが 500 になりました",
+      "metrics": {
+        "quality_score": 0.8666666666666666,
+        "correctness": 4,
+        "naturalness": 4,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 4.333333333333333,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "レスポンスが 500 になりました",
+        "latency_seconds": 0.12330220900003042,
+        "time_to_first_token": 0.12330220900003042,
+        "output_tokens": 10,
+        "tokens_per_second": 81.10154782383123,
+        "peak_memory_mb": 431.9404296875,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.17970510973909595
+    },
+    {
+      "example_id": "business_6006",
+      "task": "business_rewriting",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "請求書のご送付状況につきまして、念のため確認させていただけますでしょうか。",
+      "reference_answer": "請求書のご送付状況につきまして、念のため確認させていただけますでしょうか。",
+      "metrics": {
+        "quality_score": 1.0,
+        "correctness": 5,
+        "naturalness": 5,
+        "politeness": 5,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 5.0,
+        "exact_match": 1.0
+      },
+      "efficiency": {
+        "text": "請求書のご送付状況につきまして、念のため確認させていただけますでしょうか。",
+        "latency_seconds": 0.26126866699996754,
+        "time_to_first_token": 0.26126866699996754,
+        "output_tokens": 21,
+        "tokens_per_second": 80.37703196917451,
+        "peak_memory_mb": 431.9404296875,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.17955354075211455
+    },
+    {
+      "example_id": "information_6006",
+      "task": "information_extraction",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "で抽出した{\"company\": \"青葉物流\", \"meeting_date\": \"2026-10-22\", \"meeting_time\": \"16:00\", \"meeting_type",
+      "reference_answer": {
+        "company": "青葉物流",
+        "meeting_date": "2026-10-22",
+        "meeting_time": "16:00",
+        "meeting_type": "オンライン",
+        "required_action": "参加可否を返信"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "で抽出した{\"company\": \"青葉物流\", \"meeting_date\": \"2026-10-22\", \"meeting_time\": \"16:00\", \"meeting_type",
+        "latency_seconds": 0.5910896660006983,
+        "time_to_first_token": 0.5910896660006983,
+        "output_tokens": 48,
+        "tokens_per_second": 81.20595361574684,
+        "peak_memory_mb": 431.94384765625,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "summarization_6006",
+      "task": "summarization",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "{\"summary\": \"法人向け",
+      "reference_answer": {
+        "action_items": [
+          {
+            "deadline": "2026-10-31",
+            "owner": "鈴木",
+            "task": "評価基準を整理してレビュー表を共有"
+          }
+        ],
+        "decisions": [
+          "部署共通のレビュー表を作成する"
+        ],
+        "summary": "法人向けFAQの回答品質を揃えるため、評価基準を整理する。"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "{\"summary\": \"法人向け",
+        "latency_seconds": 0.15680100000099628,
+        "time_to_first_token": 0.15680100000099628,
+        "output_tokens": 12,
+        "tokens_per_second": 76.5301241696402,
+        "peak_memory_mb": 431.94287109375,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "grounded_6006",
+      "task": "grounded_qa",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "利用方針では、利用目的を特定して回答してください。",
+      "reference_answer": "いいえ、入力してはなりません。",
+      "metrics": {
+        "quality_score": 0.6666666666666667,
+        "correctness": 2,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 3.3333333333333335,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "利用方針では、利用目的を特定して回答してください。",
+        "latency_seconds": 0.18889554100132955,
+        "time_to_first_token": 0.18889554100132955,
+        "output_tokens": 15,
+        "tokens_per_second": 79.40896815502077,
+        "peak_memory_mb": 431.9404296875,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.127069465947482
+    },
+    {
+      "example_id": "robustness_6006",
+      "task": "robustness",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "ミーティングは明日で、担当は佐藤です。",
+      "reference_answer": "ミーティングは明日で、担当は佐藤です。",
+      "metrics": {
+        "quality_score": 0.9333333333333333,
+        "correctness": 5,
+        "naturalness": 5,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 4.666666666666667,
+        "exact_match": 1.0
+      },
+      "efficiency": {
+        "text": "ミーティングは明日で、担当は佐藤です。",
+        "latency_seconds": 0.15318741699957172,
+        "time_to_first_token": 0.15318741699957172,
+        "output_tokens": 12,
+        "tokens_per_second": 78.33541576090123,
+        "peak_memory_mb": 431.94287109375,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.18525249153277878
+    },
+    {
+      "example_id": "business_6007",
+      "task": "business_rewriting",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "納期に遅れが生じる見込みとなり、誠に申し訳ございません。状況と今後の対応について速やかにご共有いたします。",
+      "reference_answer": "納期に遅れが生じる見込みとなり、誠に申し訳ございません。状況と今後の対応について速やかにご共有いたします。",
+      "metrics": {
+        "quality_score": 1.0,
+        "correctness": 5,
+        "naturalness": 5,
+        "politeness": 5,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 5.0,
+        "exact_match": 1.0
+      },
+      "efficiency": {
+        "text": "納期に遅れが生じる見込みとなり、誠に申し訳ございません。状況と今後の対応について速やかにご共有いたします。",
+        "latency_seconds": 0.3396252079983242,
+        "time_to_first_token": 0.3396252079983242,
+        "output_tokens": 28,
+        "tokens_per_second": 82.44382142605316,
+        "peak_memory_mb": 431.94287109375,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.17150355936885878
+    },
+    {
+      "example_id": "information_6007",
+      "task": "information_extraction",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "で抽出した参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を",
+      "reference_answer": {
+        "company": "未来バイオ",
+        "meeting_date": "2026-11-05",
+        "meeting_time": "09:00",
+        "meeting_type": "オンライン",
+        "required_action": "参加可否を返信"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "で抽出した参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を",
+        "latency_seconds": 0.6038485420012876,
+        "time_to_first_token": 0.6038485420012876,
+        "output_tokens": 48,
+        "tokens_per_second": 79.4901314838277,
+        "peak_memory_mb": 431.94384765625,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "summarization_6007",
+      "task": "summarization",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "{\"summary\": \"法人向け",
+      "reference_answer": {
+        "action_items": [
+          {
+            "deadline": "2026-11-15",
+            "owner": "高橋",
+            "task": "評価基準を整理してレビュー表を共有"
+          }
+        ],
+        "decisions": [
+          "部署共通のレビュー表を作成する"
+        ],
+        "summary": "法人向けFAQの回答品質を揃えるため、評価基準を整理する。"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "{\"summary\": \"法人向け",
+        "latency_seconds": 0.1562180000000808,
+        "time_to_first_token": 0.1562180000000808,
+        "output_tokens": 12,
+        "tokens_per_second": 76.81573186184559,
+        "peak_memory_mb": 431.94287109375,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "grounded_6007",
+      "task": "grounded_qa",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "本文には海外からの勤務可否は記載されていません。",
+      "reference_answer": "本文には海外からの勤務可否は記載されていません。",
+      "metrics": {
+        "quality_score": 0.9333333333333333,
+        "correctness": 5,
+        "naturalness": 5,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 4.666666666666667,
+        "exact_match": 1.0
+      },
+      "efficiency": {
+        "text": "本文には海外からの勤務可否は記載されていません。",
+        "latency_seconds": 0.1876983329984796,
+        "time_to_first_token": 0.1876983329984796,
+        "output_tokens": 15,
+        "tokens_per_second": 79.91546733726987,
+        "peak_memory_mb": 431.9404296875,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.17811196269889729
+    },
+    {
+      "example_id": "robustness_6007",
+      "task": "robustness",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "差分はありません。どちらも300万円を表しています。",
+      "reference_answer": "差分はありません。どちらも300万円を表しています。",
+      "metrics": {
+        "quality_score": 0.9333333333333333,
+        "correctness": 5,
+        "naturalness": 5,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 4.666666666666667,
+        "exact_match": 1.0
+      },
+      "efficiency": {
+        "text": "差分はありません。どちらも300万円を表しています。",
+        "latency_seconds": 0.16401508300077694,
+        "time_to_first_token": 0.16401508300077694,
+        "output_tokens": 13,
+        "tokens_per_second": 79.26100308676135,
+        "peak_memory_mb": 431.9404296875,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.18279016680259763
+    },
+    {
+      "example_id": "business_6008",
+      "task": "business_rewriting",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "資料をご確認のうえ、ご返信いただけますと幸いです。",
+      "reference_answer": "お手数をおかけいたしますが、資料をご確認のうえ、ご返信いただけますと幸いです。",
+      "metrics": {
+        "quality_score": 0.8666666666666666,
+        "correctness": 3,
+        "naturalness": 3,
+        "politeness": 5,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 4.333333333333333,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "資料をご確認のうえ、ご返信いただけますと幸いです。",
+        "latency_seconds": 0.24043470899960084,
+        "time_to_first_token": 0.24043470899960084,
+        "output_tokens": 20,
+        "tokens_per_second": 83.18266561103373,
+        "peak_memory_mb": 431.94287109375,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.15796063352940717
+    },
+    {
+      "example_id": "information_6008",
+      "task": "information_extraction",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "xample株式会社より、2026-08-03 14:00からオンラインで採用面談を実施したいとの連絡。参加可否を返信する。",
+      "reference_answer": {
+        "company": "Example株式会社",
+        "meeting_date": "2026-08-03",
+        "meeting_time": "14:00",
+        "meeting_type": "オンライン",
+        "required_action": "参加可否を返信"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "xample株式会社より、2026-08-03 14:00からオンラインで採用面談を実施したいとの連絡。参加可否を返信する。",
+        "latency_seconds": 0.4182054579996475,
+        "time_to_first_token": 0.4182054579996475,
+        "output_tokens": 34,
+        "tokens_per_second": 81.2997519511777,
+        "peak_memory_mb": 431.94384765625,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "summarization_6008",
+      "task": "summarization",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "{\"summary\": \"法人向け",
+      "reference_answer": {
+        "action_items": [
+          {
+            "deadline": "2026-08-10",
+            "owner": "佐藤",
+            "task": "評価基準を整理してレビュー表を共有"
+          }
+        ],
+        "decisions": [
+          "部署共通のレビュー表を作成する"
+        ],
+        "summary": "法人向けFAQの回答品質を揃えるため、評価基準を整理する。"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "{\"summary\": \"法人向け",
+        "latency_seconds": 0.15528570799870067,
+        "time_to_first_token": 0.15528570799870067,
+        "output_tokens": 12,
+        "tokens_per_second": 77.27691205233394,
+        "peak_memory_mb": 431.94287109375,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "grounded_6008",
+      "task": "grounded_qa",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "利用日から30日以内に申請する必要があります。",
+      "reference_answer": "利用日から30日以内に申請する必要があります。",
+      "metrics": {
+        "quality_score": 0.9333333333333333,
+        "correctness": 5,
+        "naturalness": 5,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 4.666666666666667,
+        "exact_match": 1.0
+      },
+      "efficiency": {
+        "text": "利用日から30日以内に申請する必要があります。",
+        "latency_seconds": 0.15568787499978498,
+        "time_to_first_token": 0.15568787499978498,
+        "output_tokens": 12,
+        "tokens_per_second": 77.07729327037558,
+        "peak_memory_mb": 431.94287109375,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.18466286154700393
+    },
+    {
+      "example_id": "robustness_6008",
+      "task": "robustness",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "{\"date\": \"2026年7月18日\", \"amount_jpy\": \"3000000\"}",
+      "reference_answer": {
+        "amount_jpy": "3000000",
+        "date": "2026年7月18日"
+      },
+      "metrics": {
+        "quality_score": 1.0,
+        "json_validity": 1.0,
+        "schema_compliance": 1.0,
+        "field_accuracy": 1.0
+      },
+      "efficiency": {
+        "text": "{\"date\": \"2026年7月18日\", \"amount_jpy\": \"3000000\"}",
+        "latency_seconds": 0.378385125000932,
+        "time_to_first_token": 0.378385125000932,
+        "output_tokens": 31,
+        "tokens_per_second": 81.92711063872726,
+        "peak_memory_mb": 431.9404296875,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.16839122150367175
+    },
+    {
+      "example_id": "business_6009",
+      "task": "business_rewriting",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "明日の打ち合わせにつきまして、ご都合が難しい場合はお知らせいただけますでしょうか。",
+      "reference_answer": "明日の打ち合わせにつきまして、ご都合が難しい場合はお知らせいただけますでしょうか。",
+      "metrics": {
+        "quality_score": 1.0,
+        "correctness": 5,
+        "naturalness": 5,
+        "politeness": 5,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 5.0,
+        "exact_match": 1.0
+      },
+      "efficiency": {
+        "text": "明日の打ち合わせにつきまして、ご都合が難しい場合はお知らせいただけますでしょうか。",
+        "latency_seconds": 0.25646375000178523,
+        "time_to_first_token": 0.25646375000178523,
+        "output_tokens": 21,
+        "tokens_per_second": 81.8829171758341,
+        "peak_memory_mb": 431.9404296875,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.18015165021247515
+    },
+    {
+      "example_id": "information_6009",
+      "task": "information_extraction",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "で抽出した参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を",
+      "reference_answer": {
+        "company": "東都システムズ",
+        "meeting_date": "2026-09-14",
+        "meeting_time": "10:30",
+        "meeting_type": "オンライン",
+        "required_action": "参加可否を返信"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "で抽出した参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を返信するため、参加可否を",
+        "latency_seconds": 0.5894005840000318,
+        "time_to_first_token": 0.5894005840000318,
+        "output_tokens": 48,
+        "tokens_per_second": 81.43867057993518,
+        "peak_memory_mb": 431.94384765625,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "summarization_6009",
+      "task": "summarization",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "{\"summary\": \"法人向け",
+      "reference_answer": {
+        "action_items": [
+          {
+            "deadline": "2026-09-20",
+            "owner": "田中",
+            "task": "評価基準を整理してレビュー表を共有"
+          }
+        ],
+        "decisions": [
+          "部署共通のレビュー表を作成する"
+        ],
+        "summary": "法人向けFAQの回答品質を揃えるため、評価基準を整理する。"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "{\"summary\": \"法人向け",
+        "latency_seconds": 0.15351675000056275,
+        "time_to_first_token": 0.15351675000056275,
+        "output_tokens": 12,
+        "tokens_per_second": 78.16736610145806,
+        "peak_memory_mb": 431.94287109375,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "grounded_6009",
+      "task": "grounded_qa",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "いいえ、消耗品は保証対象外です。",
+      "reference_answer": "いいえ、消耗品は保証対象外です。",
+      "metrics": {
+        "quality_score": 0.9333333333333333,
+        "correctness": 5,
+        "naturalness": 5,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 4.666666666666667,
+        "exact_match": 1.0
+      },
+      "efficiency": {
+        "text": "いいえ、消耗品は保証対象外です。",
+        "latency_seconds": 0.15230204200088338,
+        "time_to_first_token": 0.15230204200088338,
+        "output_tokens": 12,
+        "tokens_per_second": 78.79080176699402,
+        "peak_memory_mb": 431.94287109375,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.18546448195972123
+    },
+    {
+      "example_id": "robustness_6009",
+      "task": "robustness",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "レスポンスが 500 になりました",
+      "reference_answer": "API レスポンスが 500 になりました",
+      "metrics": {
+        "quality_score": 0.8666666666666666,
+        "correctness": 4,
+        "naturalness": 4,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 4.333333333333333,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "レスポンスが 500 になりました",
+        "latency_seconds": 0.12539975000072445,
+        "time_to_first_token": 0.12539975000072445,
+        "output_tokens": 10,
+        "tokens_per_second": 79.74497556767241,
+        "peak_memory_mb": 431.9404296875,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.17908372966261832
+    },
+    {
+      "example_id": "business_6010",
+      "task": "business_rewriting",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "請求書のご送付状況につきまして、念のため確認させていただけますでしょうか。",
+      "reference_answer": "請求書のご送付状況につきまして、念のため確認させていただけますでしょうか。",
+      "metrics": {
+        "quality_score": 1.0,
+        "correctness": 5,
+        "naturalness": 5,
+        "politeness": 5,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 5.0,
+        "exact_match": 1.0
+      },
+      "efficiency": {
+        "text": "請求書のご送付状況につきまして、念のため確認させていただけますでしょうか。",
+        "latency_seconds": 0.25815083300039987,
+        "time_to_first_token": 0.25815083300039987,
+        "output_tokens": 21,
+        "tokens_per_second": 81.3477909636165,
+        "peak_memory_mb": 431.9404296875,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.17993992766377673
+    },
+    {
+      "example_id": "information_6010",
+      "task": "information_extraction",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "で抽出した{\"company\": \"青葉物流\", \"meeting_date\": \"2026-10-22\", \"meeting_time\": \"16:00\", \"meeting_type",
+      "reference_answer": {
+        "company": "青葉物流",
+        "meeting_date": "2026-10-22",
+        "meeting_time": "16:00",
+        "meeting_type": "オンライン",
+        "required_action": "参加可否を返信"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "で抽出した{\"company\": \"青葉物流\", \"meeting_date\": \"2026-10-22\", \"meeting_time\": \"16:00\", \"meeting_type",
+        "latency_seconds": 0.5909963330013852,
+        "time_to_first_token": 0.5909963330013852,
+        "output_tokens": 48,
+        "tokens_per_second": 81.21877805270155,
+        "peak_memory_mb": 431.94384765625,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "summarization_6010",
+      "task": "summarization",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "{\"summary\": \"法人向け",
+      "reference_answer": {
+        "action_items": [
+          {
+            "deadline": "2026-10-31",
+            "owner": "鈴木",
+            "task": "評価基準を整理してレビュー表を共有"
+          }
+        ],
+        "decisions": [
+          "部署共通のレビュー表を作成する"
+        ],
+        "summary": "法人向けFAQの回答品質を揃えるため、評価基準を整理する。"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "{\"summary\": \"法人向け",
+        "latency_seconds": 0.1537514999999985,
+        "time_to_first_token": 0.1537514999999985,
+        "output_tokens": 12,
+        "tokens_per_second": 78.04801904371742,
+        "peak_memory_mb": 431.94287109375,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "grounded_6010",
+      "task": "grounded_qa",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "利用方針では、利用目的を特定して回答してください。",
+      "reference_answer": "いいえ、入力してはなりません。",
+      "metrics": {
+        "quality_score": 0.6666666666666667,
+        "correctness": 2,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 3.3333333333333335,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "利用方針では、利用目的を特定して回答してください。",
+        "latency_seconds": 0.18597475000024133,
+        "time_to_first_token": 0.18597475000024133,
+        "output_tokens": 15,
+        "tokens_per_second": 80.65611057404585,
+        "peak_memory_mb": 431.9404296875,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.12744600146481644
+    },
+    {
+      "example_id": "robustness_6010",
+      "task": "robustness",
+      "model": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+      "backend": "huggingface_transformers",
+      "prediction": "ミーティングは明日で、担当は佐藤です。",
+      "reference_answer": "ミーティングは明日で、担当は佐藤です。",
+      "metrics": {
+        "quality_score": 0.9333333333333333,
+        "correctness": 5,
+        "naturalness": 5,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 4.666666666666667,
+        "exact_match": 1.0
+      },
+      "efficiency": {
+        "text": "ミーティングは明日で、担当は佐藤です。",
+        "latency_seconds": 0.14746379200005322,
+        "time_to_first_token": 0.14746379200005322,
+        "output_tokens": 12,
+        "tokens_per_second": 81.37590819579405,
+        "peak_memory_mb": 431.94287109375,
+        "model_name": "rinna/japanese-gpt2-small+lora:rinna_japanese_gpt2_small_lora_mps",
+        "backend_name": "huggingface_transformers",
+        "metadata": {
+          "device": "mps:0",
+          "requested_device": "mps"
+        }
+      },
+      "efficiency_adjusted_score": 0.1866539330010725
+    }
+  ]
+}

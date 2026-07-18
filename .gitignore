@@ -20,4 +20,10 @@ checkpoints/*
 !checkpoints/rinna_japanese_gpt2_small_lora/adapter_model.safetensors
 !checkpoints/rinna_japanese_gpt2_small_lora/training_metrics.json
 checkpoints/rinna_japanese_gpt2_small_lora/tokenizer*.json
+!checkpoints/rinna_japanese_gpt2_small_lora_mps/
+!checkpoints/rinna_japanese_gpt2_small_lora_mps/README.md
+!checkpoints/rinna_japanese_gpt2_small_lora_mps/adapter_config.json
+!checkpoints/rinna_japanese_gpt2_small_lora_mps/adapter_model.safetensors
+!checkpoints/rinna_japanese_gpt2_small_lora_mps/training_metrics.json
+checkpoints/rinna_japanese_gpt2_small_lora_mps/tokenizer*.json
 outputs/

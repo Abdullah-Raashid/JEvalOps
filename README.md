@@ -45,22 +45,25 @@ The default backend is deterministic and local, so the full smoke path runs with
 
 ## Fine-Tuning Result
 
-The repository includes a CPU-run LoRA adapter for `rinna/japanese-gpt2-small`, trained on the generated SFT split and evaluated against the frozen test split.
+The repository includes an Apple Metal/MPS LoRA adapter for `rinna/japanese-gpt2-small`, trained on the generated SFT split and evaluated against the frozen test split on an M-series Mac.
 
 - Evaluation slice: 50 held-out test examples.
 - Baseline quality: `0.3533`.
-- LoRA quality: `0.4873`.
-- Relative quality lift: `+37.92%`.
-- Baseline P95 latency: `0.6362s`.
-- LoRA P95 latency: `0.6265s`.
-- P95 latency delta: `-0.0097s`.
-- Labeled error count: `50 -> 30`.
+- LoRA quality: `0.5507`.
+- Relative quality lift: `+55.85%`.
+- Baseline P95 latency: `0.5894s`.
+- LoRA P95 latency: `0.6038s`.
+- P95 latency delta: `+0.0145s`.
+- Labeled error count: `50 -> 23`.
+- Training time: `18.10s`.
+- Peak accelerator memory: `515.08 MB`.
+- Resolved accelerator: `apple_metal_mps`.
 
-The adapter improves business rewriting, grounded QA, and robustness behavior, but it is not promoted by the production gate because JSON schema compliance for extraction/summarization remains below the configured floor. See `reports/rinna_lora/fine_tuning_report.md`.
+The adapter improves business rewriting, grounded QA, and robustness behavior, but it is not promoted by the production gate because JSON schema compliance for extraction/summarization remains below the configured floor. See `reports/rinna_lora_mps/fine_tuning_report.md`.
 
 ## Apple Metal / MPS Acceleration
 
-JEvalOps supports Apple Silicon acceleration through PyTorch MPS, Apple Metal's PyTorch backend. Device selection accepts `auto`, `cpu`, `cuda`, `mps`, and `metal`; `metal` is treated as an alias for `mps`.
+JEvalOps supports Apple Silicon acceleration through PyTorch MPS, Apple Metal's PyTorch backend. Device selection accepts `auto`, `cpu`, `cuda`, `mps`, and `metal`; `metal` is treated as an alias for `mps`. The committed MPS run records `mps_available=true`, `apple_metal_enabled=true`, and `resolved_device=mps`.
 
 Check local accelerator visibility:
 
@@ -119,10 +122,10 @@ LoRA reproduction:
 
 ```bash
 python3 -m pip install -e ".[train]"
-PYTHONPATH=src python3 scripts/run_finetuning_experiment.py \
+PYTORCH_ENABLE_MPS_FALLBACK=1 PYTHONPATH=src python3 scripts/run_finetuning_experiment.py \
   --model-name rinna/japanese-gpt2-small \
-  --adapter-dir checkpoints/rinna_japanese_gpt2_small_lora \
-  --reports-dir reports/rinna_lora \
+  --adapter-dir checkpoints/rinna_japanese_gpt2_small_lora_mps \
+  --reports-dir reports/rinna_lora_mps \
   --eval-limit 50 \
   --eval-max-new-tokens 48 \
   --max-steps 200 \
@@ -130,7 +133,8 @@ PYTHONPATH=src python3 scripts/run_finetuning_experiment.py \
   --learning-rate 0.001 \
   --lora-r 16 \
   --lora-alpha 32 \
-  --device cpu \
+  --device mps \
+  --eval-device mps \
   --target-modules c_attn c_proj c_fc \
   --slow-tokenizer
 ```

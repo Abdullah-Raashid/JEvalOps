@@ -1,0 +1,49 @@
+{
+  "base_model": "rinna/japanese-gpt2-small",
+  "adapter_path": "checkpoints/rinna_japanese_gpt2_small_lora_mps",
+  "train_records": 300,
+  "validation_records": 100,
+  "training_seconds": 18.096214999999575,
+  "final_train_loss": 0.021081937476992607,
+  "mean_train_loss": 0.7618977174907923,
+  "peak_cuda_memory_mb": null,
+  "peak_accelerator_memory_mb": 515.078125,
+  "accelerator": {
+    "requested_device": "mps",
+    "resolved_device": "mps",
+    "accelerator": "apple_metal_mps",
+    "cuda_available": false,
+    "mps_available": true,
+    "apple_metal_enabled": true,
+    "mps_fallback_enabled": true
+  },
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": [
+      "c_attn",
+      "c_proj",
+      "c_fc"
+    ],
+    "resolved_target_modules": [
+      "c_attn",
+      "c_proj",
+      "c_fc"
+    ]
+  },
+  "training": {
+    "learning_rate": 0.001,
+    "max_steps": 200,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 4,
+    "max_length": 192,
+    "seed": 42,
+    "device": "mps",
+    "mixed_precision": "no",
+    "enable_mps_fallback": true,
+    "logging_steps": 10,
+    "use_fast_tokenizer": false,
+    "resolved_device": "mps"
+  }
+}
