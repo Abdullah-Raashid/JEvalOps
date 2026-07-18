@@ -1,0 +1,4 @@
+name: japanese_specialized_instruction
+backend: huggingface
+model_id: cyberagent/calm3-22b-chat
+purpose: Japanese-specialized reference model; use a smaller local substitute if hardware is limited.

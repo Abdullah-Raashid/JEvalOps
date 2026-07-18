@@ -1,0 +1,4 @@
+name: compact_multilingual_instruction
+backend: huggingface
+model_id: Qwen/Qwen2.5-1.5B-Instruct
+purpose: Compact multilingual instruction baseline.

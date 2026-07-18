@@ -1,0 +1,4 @@
+name: efficiency_oriented_small_model
+backend: vllm
+model_id: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+purpose: Throughput and memory-oriented comparison point.

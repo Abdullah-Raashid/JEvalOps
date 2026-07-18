@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jevalops"
+version = "0.1.0"
+description = "Japanese enterprise LLM evaluation, error analysis, and adaptation framework."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "pydantic>=2.0",
+  "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+api = ["fastapi>=0.111", "uvicorn>=0.30"]
+demo = ["streamlit>=1.36"]
+hf = ["torch>=2.2", "transformers>=4.43", "accelerate>=0.33"]
+vllm = ["vllm>=0.5"]
+train = ["datasets>=2.20", "peft>=0.11", "trl>=0.9", "bitsandbytes>=0.43"]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+all = ["jevalops[api,demo,hf,train,dev]"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 140
+target-version = "py311"
