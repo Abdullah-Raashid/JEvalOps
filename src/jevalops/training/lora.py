@@ -7,6 +7,8 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
 
+from jevalops.hardware.accelerator import accelerator_memory_mb, describe_accelerator, reset_peak_memory, resolve_device
+
 
 @dataclass
 class LoRAConfig:
@@ -25,6 +27,8 @@ class TrainingConfig:
     max_length: int = 512
     seed: int = 42
     device: str = "auto"
+    mixed_precision: str = "no"
+    enable_mps_fallback: bool = True
     logging_steps: int = 10
     use_fast_tokenizer: bool = True
 
@@ -53,12 +57,18 @@ def train_lora(
     torch.manual_seed(training_config.seed)
 
     output_dir.mkdir(parents=True, exist_ok=True)
-    device = _resolve_device(training_config.device, torch)
+    device = resolve_device(training_config.device, torch, enable_mps_fallback=training_config.enable_mps_fallback)
+    model_kwargs: dict[str, Any] = {}
+    if device.type == "cuda" and training_config.mixed_precision in {"fp16", "bf16"}:
+        model_kwargs["torch_dtype"] = torch.float16 if training_config.mixed_precision == "fp16" else torch.bfloat16
+    if device.type == "mps" and training_config.mixed_precision == "fp16":
+        model_kwargs["torch_dtype"] = torch.float16
+
     tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=training_config.use_fast_tokenizer)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
-    model = AutoModelForCausalLM.from_pretrained(model_name)
+    model = AutoModelForCausalLM.from_pretrained(model_name, **model_kwargs)
     model.config.use_cache = False
     target_modules = lora_config.target_modules or infer_lora_target_modules(model_name)
     peft_config = PeftLoraConfig(
@@ -87,6 +97,8 @@ def train_lora(
     scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=0, num_training_steps=training_config.max_steps)
 
     losses: list[float] = []
+    reset_peak_memory(device, torch)
+
     start = time.perf_counter()
     optimizer.zero_grad(set_to_none=True)
     step = 0
@@ -115,6 +127,9 @@ def train_lora(
         "training_seconds": time.perf_counter() - start,
         "final_train_loss": losses[-1],
         "mean_train_loss": sum(losses) / len(losses),
+        "peak_cuda_memory_mb": _peak_cuda_memory_mb(device, torch),
+        "peak_accelerator_memory_mb": accelerator_memory_mb(device, torch),
+        "accelerator": describe_accelerator(training_config.device, device, torch).to_dict(),
         "lora": asdict(lora_config) | {"resolved_target_modules": target_modules},
         "training": asdict(training_config) | {"resolved_device": str(device)},
     }
@@ -154,14 +169,10 @@ def _collate(batch: list[dict[str, str]], tokenizer, max_length: int) -> dict[st
     return encoded
 
 
-def _resolve_device(requested: str, torch):
-    if requested != "auto":
-        return torch.device(requested)
-    if torch.cuda.is_available():
-        return torch.device("cuda")
-    if hasattr(torch.backends, "mps") and torch.backends.mps.is_available():
-        return torch.device("mps")
-    return torch.device("cpu")
+def _peak_cuda_memory_mb(device, torch) -> float | None:
+    if getattr(device, "type", None) != "cuda":
+        return None
+    return torch.cuda.max_memory_allocated(device) / (1024 * 1024)
 
 
 def infer_lora_target_modules(model_name: str) -> list[str]:

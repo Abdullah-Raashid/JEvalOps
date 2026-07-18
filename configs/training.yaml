@@ -19,4 +19,6 @@ training:
   eval_steps: 50
   save_steps: 100
   mixed_precision: "no"
+  device: auto
+  enable_mps_fallback: true
   early_stopping_patience: 3

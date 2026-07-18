@@ -19,6 +19,9 @@ def main() -> None:
     parser.add_argument("--reports-dir", type=Path, default=Path("reports/lora_eval"))
     parser.add_argument("--eval-limit", type=int, default=50)
     parser.add_argument("--eval-max-new-tokens", type=int, default=48)
+    parser.add_argument("--eval-device-map", default=None)
+    parser.add_argument("--eval-device", default="auto", help="Inference device: auto, cpu, cuda, mps, or metal.")
+    parser.add_argument("--disable-mps-fallback", action="store_true")
     parser.add_argument("--slow-tokenizer", action="store_true")
     parser.add_argument("--mlflow-experiment", default=None)
     args = parser.parse_args()
@@ -33,19 +36,23 @@ def main() -> None:
         examples,
         HuggingFaceBackend(
             args.model_name,
-            device_map=None,
+            device_map=args.eval_device_map,
+            device=args.eval_device,
             default_max_new_tokens=args.eval_max_new_tokens,
             use_fast_tokenizer=not args.slow_tokenizer,
+            enable_mps_fallback=not args.disable_mps_fallback,
         ),
     )
     candidate = evaluate_dataset(
         examples,
         HuggingFaceBackend(
             args.model_name,
-            device_map=None,
+            device_map=args.eval_device_map,
+            device=args.eval_device,
             adapter_path=args.adapter_dir,
             default_max_new_tokens=args.eval_max_new_tokens,
             use_fast_tokenizer=not args.slow_tokenizer,
+            enable_mps_fallback=not args.disable_mps_fallback,
         ),
     )
     save_evaluation(args.reports_dir / "hf_baseline_results.json", baseline)

@@ -58,6 +58,43 @@ The repository includes a CPU-run LoRA adapter for `rinna/japanese-gpt2-small`, 
 
 The adapter improves business rewriting, grounded QA, and robustness behavior, but it is not promoted by the production gate because JSON schema compliance for extraction/summarization remains below the configured floor. See `reports/rinna_lora/fine_tuning_report.md`.
 
+## Apple Metal / MPS Acceleration
+
+JEvalOps supports Apple Silicon acceleration through PyTorch MPS, Apple Metal's PyTorch backend. Device selection accepts `auto`, `cpu`, `cuda`, `mps`, and `metal`; `metal` is treated as an alias for `mps`.
+
+Check local accelerator visibility:
+
+```bash
+python3 - <<'PY'
+import torch
+print("CUDA:", torch.cuda.is_available())
+print("MPS:", hasattr(torch.backends, "mps") and torch.backends.mps.is_available())
+PY
+```
+
+Run the same LoRA experiment on an M-series Mac GPU:
+
+```bash
+python3 -m pip install -e ".[train]"
+PYTORCH_ENABLE_MPS_FALLBACK=1 PYTHONPATH=src python3 scripts/run_finetuning_experiment.py \
+  --model-name rinna/japanese-gpt2-small \
+  --adapter-dir checkpoints/rinna_japanese_gpt2_small_lora_mps \
+  --reports-dir reports/rinna_lora_mps \
+  --eval-limit 50 \
+  --eval-max-new-tokens 48 \
+  --max-steps 200 \
+  --max-length 192 \
+  --learning-rate 0.001 \
+  --lora-r 16 \
+  --lora-alpha 32 \
+  --device mps \
+  --eval-device mps \
+  --target-modules c_attn c_proj c_fc \
+  --slow-tokenizer
+```
+
+`PYTORCH_ENABLE_MPS_FALLBACK=1` lets PyTorch fall back to CPU for individual operations that are not implemented on MPS. Training metrics record the requested device, resolved device, accelerator name, MPS availability, and accelerator memory when PyTorch exposes it.
+
 ## Repository Map
 
 - `src/jevalops/data`: Pydantic schema, JSONL validation, PII checks, normalization, deduplication.

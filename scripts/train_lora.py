@@ -19,6 +19,8 @@ def main() -> None:
     parser.add_argument("--gradient-accumulation-steps", type=int, default=4)
     parser.add_argument("--learning-rate", type=float, default=1e-3)
     parser.add_argument("--device", default="auto")
+    parser.add_argument("--mixed-precision", choices=["no", "fp16", "bf16"], default="no")
+    parser.add_argument("--disable-mps-fallback", action="store_true")
     parser.add_argument("--target-modules", nargs="*", default=None)
     parser.add_argument("--slow-tokenizer", action="store_true")
     args = parser.parse_args()
@@ -35,6 +37,8 @@ def main() -> None:
             gradient_accumulation_steps=args.gradient_accumulation_steps,
             learning_rate=args.learning_rate,
             device=args.device,
+            mixed_precision=args.mixed_precision,
+            enable_mps_fallback=not args.disable_mps_fallback,
             use_fast_tokenizer=not args.slow_tokenizer,
         ),
     )

@@ -13,3 +13,5 @@ Headline result on 50 held-out test examples:
 - Error count: `50 -> 30`
 
 The model is not promoted by the strict production gate because JSON schema compliance remains below the configured floor.
+
+Apple Metal/MPS support has been added for M-series Macs via `--device mps` and `--eval-device mps`. The committed headline metrics above are still the CPU run; rerun `make finetune-mps` on a PyTorch build with MPS available to produce Apple Metal-specific timing and memory numbers.

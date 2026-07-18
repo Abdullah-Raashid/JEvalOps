@@ -22,14 +22,18 @@ def main() -> None:
     parser.add_argument("--reports-dir", type=Path, default=Path("reports"))
     parser.add_argument("--eval-limit", type=int, default=50)
     parser.add_argument("--eval-max-new-tokens", type=int, default=64)
+    parser.add_argument("--eval-device-map", default=None)
+    parser.add_argument("--eval-device", default="auto", help="Inference device: auto, cpu, cuda, mps, or metal.")
     parser.add_argument("--max-steps", type=int, default=100)
     parser.add_argument("--max-length", type=int, default=512)
     parser.add_argument("--learning-rate", type=float, default=2e-4)
     parser.add_argument("--lora-r", type=int, default=8)
     parser.add_argument("--lora-alpha", type=int, default=16)
     parser.add_argument("--device", default="auto")
+    parser.add_argument("--mixed-precision", choices=["no", "fp16", "bf16"], default="no")
     parser.add_argument("--target-modules", nargs="*", default=None)
     parser.add_argument("--slow-tokenizer", action="store_true")
+    parser.add_argument("--disable-mps-fallback", action="store_true")
     parser.add_argument("--mlflow-experiment", default=None)
     args = parser.parse_args()
 
@@ -43,9 +47,11 @@ def main() -> None:
         examples,
         HuggingFaceBackend(
             args.model_name,
-            device_map=None,
+            device_map=args.eval_device_map,
+            device=args.eval_device,
             default_max_new_tokens=args.eval_max_new_tokens,
             use_fast_tokenizer=not args.slow_tokenizer,
+            enable_mps_fallback=not args.disable_mps_fallback,
         ),
     )
     save_evaluation(args.reports_dir / "hf_baseline_results.json", baseline)
@@ -61,6 +67,8 @@ def main() -> None:
             max_length=args.max_length,
             device=args.device,
             learning_rate=args.learning_rate,
+            mixed_precision=args.mixed_precision,
+            enable_mps_fallback=not args.disable_mps_fallback,
             use_fast_tokenizer=not args.slow_tokenizer,
         ),
     )
@@ -68,10 +76,12 @@ def main() -> None:
         examples,
         HuggingFaceBackend(
             args.model_name,
-            device_map=None,
+            device_map=args.eval_device_map,
+            device=args.eval_device,
             adapter_path=args.adapter_dir,
             default_max_new_tokens=args.eval_max_new_tokens,
             use_fast_tokenizer=not args.slow_tokenizer,
+            enable_mps_fallback=not args.disable_mps_fallback,
         ),
     )
     save_evaluation(args.reports_dir / "lora_results.json", candidate)

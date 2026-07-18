@@ -23,5 +23,11 @@ def log_finetuning_summary(summary: dict[str, Any], *, experiment_name: str = "j
         mlflow.log_metric("p95_latency_delta_seconds", summary["p95_latency_delta_seconds"])
         mlflow.log_metric("baseline_error_count", summary["baseline_error_count"])
         mlflow.log_metric("lora_error_count", summary["lora_error_count"])
+        training = summary.get("training", {})
+        accelerator = training.get("accelerator", {})
+        if accelerator:
+            mlflow.log_param("accelerator", accelerator.get("accelerator"))
+            mlflow.log_param("resolved_device", accelerator.get("resolved_device"))
+            mlflow.log_param("apple_metal_enabled", accelerator.get("apple_metal_enabled"))
         for name, passed in summary["promotion"]["checks"].items():
             mlflow.log_metric(f"gate_{name}", int(passed))
