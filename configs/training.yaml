@@ -1,5 +1,5 @@
 seed: 42
-base_model: Qwen/Qwen2.5-1.5B-Instruct
+base_model: rinna/japanese-gpt2-small
 dataset:
   train_path: data/processed/sft_train.jsonl
   validation_path: data/validation.jsonl
@@ -8,14 +8,15 @@ lora:
   alpha: 32
   dropout: 0.05
   target_modules:
-    - q_proj
-    - v_proj
+    - c_attn
+    - c_proj
+    - c_fc
 training:
-  learning_rate: 0.0002
-  max_steps: 500
+  learning_rate: 0.001
+  max_steps: 200
   per_device_train_batch_size: 1
-  gradient_accumulation_steps: 8
+  gradient_accumulation_steps: 4
   eval_steps: 50
   save_steps: 100
-  mixed_precision: bf16
+  mixed_precision: "no"
   early_stopping_patience: 3

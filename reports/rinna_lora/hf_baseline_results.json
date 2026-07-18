@@ -1,0 +1,1645 @@
+{
+  "model": "rinna/japanese-gpt2-small",
+  "backend": "huggingface_transformers",
+  "quality_score": 0.35333333333333333,
+  "by_task": {
+    "business_rewriting": 0.6133333333333333,
+    "information_extraction": 0.0,
+    "summarization": 0.0,
+    "grounded_qa": 0.6033333333333333,
+    "robustness": 0.55
+  },
+  "efficiency": {
+    "mean_latency_seconds": 0.557114797639988,
+    "p95_latency_seconds": 0.6361651669994899,
+    "mean_tokens_per_second": 66.3589691830867
+  },
+  "records": [
+    {
+      "example_id": "business_6001",
+      "task": "business_rewriting",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "明日の打ち合わせ、無理なら言って(案件番号6001) 入力: 明日の打ち合わせ、無理なら言って(案件番号6001) 回答: 明日の打ち合わせ、無理なら言って(案件番号6001)",
+      "reference_answer": "明日の打ち合わせにつきまして、ご都合が難しい場合はお知らせいただけますでしょうか。",
+      "metrics": {
+        "quality_score": 0.5666666666666667,
+        "correctness": 1,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 3,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 2.8333333333333335,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "明日の打ち合わせ、無理なら言って(案件番号6001) 入力: 明日の打ち合わせ、無理なら言って(案件番号6001) 回答: 明日の打ち合わせ、無理なら言って(案件番号6001)",
+        "latency_seconds": 0.9838246250001248,
+        "time_to_first_token": 0.9838246250001248,
+        "output_tokens": 42,
+        "tokens_per_second": 42.690535419353495,
+        "peak_memory_mb": 434.953125,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0822154023912422
+    },
+    {
+      "example_id": "information_6001",
+      "task": "information_extraction",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "会議の概要を で抽出してください。 入力: 会議の概要を で抽出してください。 入力: 会議の概要を で抽出してください。 入力: 会議の概要を で",
+      "reference_answer": {
+        "company": "東都システムズ",
+        "meeting_date": "2026-09-14",
+        "meeting_time": "10:30",
+        "meeting_type": "オンライン",
+        "required_action": "参加可否を返信"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "会議の概要を で抽出してください。 入力: 会議の概要を で抽出してください。 入力: 会議の概要を で抽出してください。 入力: 会議の概要を で",
+        "latency_seconds": 0.5708100840001862,
+        "time_to_first_token": 0.5708100840001862,
+        "output_tokens": 32,
+        "tokens_per_second": 56.06067744239354,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "summarization_6001",
+      "task": "summarization",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "会議の議事録を で出力してください。会議の議事録番号6001。 入力: 定例会議では、法人向け の回答品質が部署ごとにばらつく点が課題になった。田中さんが",
+      "reference_answer": {
+        "action_items": [
+          {
+            "deadline": "2026-09-20",
+            "owner": "田中",
+            "task": "評価基準を整理してレビュー表を共有"
+          }
+        ],
+        "decisions": [
+          "部署共通のレビュー表を作成する"
+        ],
+        "summary": "法人向けFAQの回答品質を揃えるため、評価基準を整理する。"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "会議の議事録を で出力してください。会議の議事録番号6001。 入力: 定例会議では、法人向け の回答品質が部署ごとにばらつく点が課題になった。田中さんが",
+        "latency_seconds": 0.5456594170009339,
+        "time_to_first_token": 0.5456594170009339,
+        "output_tokens": 36,
+        "tokens_per_second": 65.97521985025759,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "grounded_6001",
+      "task": "grounded_qa",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "保証対象ですか。 確認番号6001。 回答: 保証対象ですか。 確認番号6001。 回答: 保証対象ですか。 確認番号6001。 回答: 保証対象ですか。 確認",
+      "reference_answer": "いいえ、消耗品は保証対象外です。",
+      "metrics": {
+        "quality_score": 0.6666666666666667,
+        "correctness": 2,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 3,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 3.3333333333333335,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "保証対象ですか。 確認番号6001。 回答: 保証対象ですか。 確認番号6001。 回答: 保証対象ですか。 確認番号6001。 回答: 保証対象ですか。 確認",
+        "latency_seconds": 0.5370452909992309,
+        "time_to_first_token": 0.5370452909992309,
+        "output_tokens": 35,
+        "tokens_per_second": 65.17141214454875,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.10602301804670465
+    },
+    {
+      "example_id": "robustness_6001",
+      "task": "robustness",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "レスポンスが 500 になりました ケース6001 回答: レスポンスが 500 になりました ケース6001 回答: レスポンスが 500 になりました ケース6001 回答:",
+      "reference_answer": "API レスポンスが 500 になりました",
+      "metrics": {
+        "quality_score": 0.8,
+        "correctness": 4,
+        "naturalness": 4,
+        "politeness": 3,
+        "faithfulness": 3,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 4.0,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "レスポンスが 500 になりました ケース6001 回答: レスポンスが 500 になりました ケース6001 回答: レスポンスが 500 になりました ケース6001 回答:",
+        "latency_seconds": 0.5594460419997631,
+        "time_to_first_token": 0.5594460419997631,
+        "output_tokens": 37,
+        "tokens_per_second": 66.13685185391957,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.12640760856231678
+    },
+    {
+      "example_id": "business_6002",
+      "task": "business_rewriting",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "請求書まだ?(案件番号6003) 回答: 請求書まだ?(案件番号6004) 回答: 請求書まだ?(案件番号6005) 回答: 請求書まだ?(案件",
+      "reference_answer": "請求書のご送付状況につきまして、念のため確認させていただけますでしょうか。",
+      "metrics": {
+        "quality_score": 0.6333333333333333,
+        "correctness": 1,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 3.1666666666666665,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "請求書まだ?(案件番号6003) 回答: 請求書まだ?(案件番号6004) 回答: 請求書まだ?(案件番号6005) 回答: 請求書まだ?(案件",
+        "latency_seconds": 0.5299660000000586,
+        "time_to_first_token": 0.5299660000000586,
+        "output_tokens": 33,
+        "tokens_per_second": 62.26814550366694,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.10093447277263952
+    },
+    {
+      "example_id": "information_6002",
+      "task": "information_extraction",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "青葉物流より、2026-10-22 16:00からオンラインで採用面談を実施したいとの連絡。参加可否を本日中に返信する必要がある。管理番号6002。 入力: 青葉物流より、2026-10",
+      "reference_answer": {
+        "company": "青葉物流",
+        "meeting_date": "2026-10-22",
+        "meeting_time": "16:00",
+        "meeting_type": "オンライン",
+        "required_action": "参加可否を返信"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "青葉物流より、2026-10-22 16:00からオンラインで採用面談を実施したいとの連絡。参加可否を本日中に返信する必要がある。管理番号6002。 入力: 青葉物流より、2026-10",
+        "latency_seconds": 0.5349771250002959,
+        "time_to_first_token": 0.5349771250002959,
+        "output_tokens": 45,
+        "tokens_per_second": 84.11574607040461,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "summarization_6002",
+      "task": "summarization",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答:",
+      "reference_answer": {
+        "action_items": [
+          {
+            "deadline": "2026-10-31",
+            "owner": "鈴木",
+            "task": "評価基準を整理してレビュー表を共有"
+          }
+        ],
+        "decisions": [
+          "部署共通のレビュー表を作成する"
+        ],
+        "summary": "法人向けFAQの回答品質を揃えるため、評価基準を整理する。"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答:",
+        "latency_seconds": 0.5278340829991066,
+        "time_to_first_token": 0.5278340829991066,
+        "output_tokens": 24,
+        "tokens_per_second": 45.46883343272212,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "grounded_6002",
+      "task": "grounded_qa",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "顧客の個人情報を外部 サービスに入力できますか。 確認番号6003。 回答: 顧客の個人情報を外部 サービスに入力できますか。 確認番号6004。 回答: 顧客の",
+      "reference_answer": "いいえ、入力してはなりません。",
+      "metrics": {
+        "quality_score": 0.5666666666666667,
+        "correctness": 1,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 3,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 2.8333333333333335,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "顧客の個人情報を外部 サービスに入力できますか。 確認番号6003。 回答: 顧客の個人情報を外部 サービスに入力できますか。 確認番号6004。 回答: 顧客の",
+        "latency_seconds": 0.5350089589992422,
+        "time_to_first_token": 0.5350089589992422,
+        "output_tokens": 36,
+        "tokens_per_second": 67.28859282532312,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.09017394360748987
+    },
+    {
+      "example_id": "robustness_6002",
+      "task": "robustness",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。",
+      "reference_answer": "ミーティングは明日で、担当は佐藤です。",
+      "metrics": {
+        "quality_score": 0.6333333333333333,
+        "correctness": 1,
+        "naturalness": 2,
+        "politeness": 5,
+        "faithfulness": 3,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 3.1666666666666665,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。",
+        "latency_seconds": 0.5212214170005609,
+        "time_to_first_token": 0.5212214170005609,
+        "output_tokens": 42,
+        "tokens_per_second": 80.5799582098807,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.10120231004709913
+    },
+    {
+      "example_id": "business_6003",
+      "task": "business_rewriting",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "納期遅れます。すみません。(案件番号6004) 回答: 納期遅れます。すみません。(案件番号6005) 回答: 納期遅れます。すみません。(案件番号600",
+      "reference_answer": "納期に遅れが生じる見込みとなり、誠に申し訳ございません。状況と今後の対応について速やかにご共有いたします。",
+      "metrics": {
+        "quality_score": 0.6333333333333333,
+        "correctness": 1,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 3.1666666666666665,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "納期遅れます。すみません。(案件番号6004) 回答: 納期遅れます。すみません。(案件番号6005) 回答: 納期遅れます。すみません。(案件番号600",
+        "latency_seconds": 0.5125140000000101,
+        "time_to_first_token": 0.5125140000000101,
+        "output_tokens": 36,
+        "tokens_per_second": 70.24198363361643,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.10147495514365493
+    },
+    {
+      "example_id": "information_6003",
+      "task": "information_extraction",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "会議の概要を で抽出してください。 入力: 未来バイオより、2026-11-05 09:00からオンラインで採用面談を実施したいとの連絡。参加可否を本日中に返信する必要がある。",
+      "reference_answer": {
+        "company": "未来バイオ",
+        "meeting_date": "2026-11-05",
+        "meeting_time": "09:00",
+        "meeting_type": "オンライン",
+        "required_action": "参加可否を返信"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "会議の概要を で抽出してください。 入力: 未来バイオより、2026-11-05 09:00からオンラインで採用面談を実施したいとの連絡。参加可否を本日中に返信する必要がある。",
+        "latency_seconds": 0.5429615419998299,
+        "time_to_first_token": 0.5429615419998299,
+        "output_tokens": 42,
+        "tokens_per_second": 77.35354486674335,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "summarization_6003",
+      "task": "summarization",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "定例会議では、法人向け の回答品質が部署ごとにばらつく点が課題になった。高橋さんが評価基準を整理し、2026-11-15までにレビュー表を共有する。議事録番号6003。 回答:",
+      "reference_answer": {
+        "action_items": [
+          {
+            "deadline": "2026-11-15",
+            "owner": "高橋",
+            "task": "評価基準を整理してレビュー表を共有"
+          }
+        ],
+        "decisions": [
+          "部署共通のレビュー表を作成する"
+        ],
+        "summary": "法人向けFAQの回答品質を揃えるため、評価基準を整理する。"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "定例会議では、法人向け の回答品質が部署ごとにばらつく点が課題になった。高橋さんが評価基準を整理し、2026-11-15までにレビュー表を共有する。議事録番号6003。 回答:",
+        "latency_seconds": 0.5496245419999468,
+        "time_to_first_token": 0.5496245419999468,
+        "output_tokens": 43,
+        "tokens_per_second": 78.2352255296565,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "grounded_6003",
+      "task": "grounded_qa",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "海外から勤務できますか。 確認番号6004。 回答: 海外から勤務できますか。 確認番号6005。 回答: 海外から勤務できますか。 確認番号6006。",
+      "reference_answer": "本文には海外からの勤務可否は記載されていません。",
+      "metrics": {
+        "quality_score": 0.5666666666666667,
+        "correctness": 1,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 3,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 2.8333333333333335,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "海外から勤務できますか。 確認番号6004。 回答: 海外から勤務できますか。 確認番号6005。 回答: 海外から勤務できますか。 確認番号6006。",
+        "latency_seconds": 0.6098374169996532,
+        "time_to_first_token": 0.6098374169996532,
+        "output_tokens": 34,
+        "tokens_per_second": 55.75256462169381,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.08833696190004602
+    },
+    {
+      "example_id": "robustness_6003",
+      "task": "robustness",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "見積もりと見積もりの金額に差分はありますか。 ケース6004 回答: 見積もりと見積もりの金額に差分はありますか。 ケース6005 回答:",
+      "reference_answer": "差分はありません。どちらも300万円を表しています。",
+      "metrics": {
+        "quality_score": 0.6,
+        "correctness": 2,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 3,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 3.0,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "見積もりと見積もりの金額に差分はありますか。 ケース6004 回答: 見積もりと見積もりの金額に差分はありますか。 ケース6005 回答:",
+        "latency_seconds": 0.5655138749989419,
+        "time_to_first_token": 0.5655138749989419,
+        "output_tokens": 32,
+        "tokens_per_second": 56.58570269396109,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.09464466458801774
+    },
+    {
+      "example_id": "business_6004",
+      "task": "business_rewriting",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "資料をご覧ください。 回答: 資料をご覧ください。 回答: 資料をご覧ください。 回答: 資料をご覧ください。 回答: 資料をご覧ください。 回答",
+      "reference_answer": "お手数をおかけいたしますが、資料をご確認のうえ、ご返信いただけますと幸いです。",
+      "metrics": {
+        "quality_score": 0.6333333333333333,
+        "correctness": 1,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 3.1666666666666665,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "資料をご覧ください。 回答: 資料をご覧ください。 回答: 資料をご覧ください。 回答: 資料をご覧ください。 回答: 資料をご覧ください。 回答",
+        "latency_seconds": 0.53049162500065,
+        "time_to_first_token": 0.53049162500065,
+        "output_tokens": 32,
+        "tokens_per_second": 60.3214046969371,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.1009185590186365
+    },
+    {
+      "example_id": "information_6004",
+      "task": "information_extraction",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "採用面談の日程調整のため、本日中にメールにて連絡。参加可否を本日中に返信する必要がある。管理番号6004。 回答: 採用面談の日程調整のため、本日中にメールにて",
+      "reference_answer": {
+        "company": "Example株式会社",
+        "meeting_date": "2026-08-03",
+        "meeting_time": "14:00",
+        "meeting_type": "オンライン",
+        "required_action": "参加可否を返信"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "採用面談の日程調整のため、本日中にメールにて連絡。参加可否を本日中に返信する必要がある。管理番号6004。 回答: 採用面談の日程調整のため、本日中にメールにて",
+        "latency_seconds": 0.8207499579984869,
+        "time_to_first_token": 0.8207499579984869,
+        "output_tokens": 39,
+        "tokens_per_second": 47.51751690016157,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "summarization_6004",
+      "task": "summarization",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "定例会議では、法人向け の回答品質が部署ごとにばらつく点が課題になった。佐藤さんが評価基準を整理し、2026-08-10までにレビュー表を共有する。議事録番号6004。 回答",
+      "reference_answer": {
+        "action_items": [
+          {
+            "deadline": "2026-08-10",
+            "owner": "佐藤",
+            "task": "評価基準を整理してレビュー表を共有"
+          }
+        ],
+        "decisions": [
+          "部署共通のレビュー表を作成する"
+        ],
+        "summary": "法人向けFAQの回答品質を揃えるため、評価基準を整理する。"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "定例会議では、法人向け の回答品質が部署ごとにばらつく点が課題になった。佐藤さんが評価基準を整理し、2026-08-10までにレビュー表を共有する。議事録番号6004。 回答",
+        "latency_seconds": 0.5271595000012894,
+        "time_to_first_token": 0.5271595000012894,
+        "output_tokens": 42,
+        "tokens_per_second": 79.672281349188,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "grounded_6004",
+      "task": "grounded_qa",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "申請書に記入した内容が正しいか確認してください。 入力: 申請書に記入した内容が正しいか確認してください。 確認番号6005。 回答: 申請書に記入した",
+      "reference_answer": "利用日から30日以内に申請する必要があります。",
+      "metrics": {
+        "quality_score": 0.6,
+        "correctness": 2,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 3,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 3.0,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "申請書に記入した内容が正しいか確認してください。 入力: 申請書に記入した内容が正しいか確認してください。 確認番号6005。 回答: 申請書に記入した",
+        "latency_seconds": 0.5740774999994755,
+        "time_to_first_token": 0.5740774999994755,
+        "output_tokens": 35,
+        "tokens_per_second": 60.9673780979606,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.09442120472513081
+    },
+    {
+      "example_id": "robustness_6004",
+      "task": "robustness",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "100,000円の発注を受けた。 ケース6004 回答: 100,000円の発注を受けた。 ケース6005 回答: 100,000円の発注を受けた。 ケース6006 回答: 100,000円",
+      "reference_answer": {
+        "amount_jpy": "3000000",
+        "date": "2026年7月18日"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "100,000円の発注を受けた。 ケース6004 回答: 100,000円の発注を受けた。 ケース6005 回答: 100,000円の発注を受けた。 ケース6006 回答: 100,000円",
+        "latency_seconds": 0.5153112089992646,
+        "time_to_first_token": 0.5153112089992646,
+        "output_tokens": 43,
+        "tokens_per_second": 83.44472087751804,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "business_6005",
+      "task": "business_rewriting",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "明日の打ち合わせ、無理なら言って(案件番号6005) 入力: 明日の打ち合わせ、無理なら言って(案件番号6005) 回答: 明日の打ち合わせ、無理なら言って(案件番号6005)",
+      "reference_answer": "明日の打ち合わせにつきまして、ご都合が難しい場合はお知らせいただけますでしょうか。",
+      "metrics": {
+        "quality_score": 0.5666666666666667,
+        "correctness": 1,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 3,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 2.8333333333333335,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "明日の打ち合わせ、無理なら言って(案件番号6005) 入力: 明日の打ち合わせ、無理なら言って(案件番号6005) 回答: 明日の打ち合わせ、無理なら言って(案件番号6005)",
+        "latency_seconds": 0.5381117500000983,
+        "time_to_first_token": 0.5381117500000983,
+        "output_tokens": 42,
+        "tokens_per_second": 78.05070229370077,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.090091194705454
+    },
+    {
+      "example_id": "information_6005",
+      "task": "information_extraction",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "会議の概要を で抽出してください。 入力: 会議の概要を で抽出してください。 入力: 会議の概要を で抽出してください。 入力: 会議の概要を で",
+      "reference_answer": {
+        "company": "東都システムズ",
+        "meeting_date": "2026-09-14",
+        "meeting_time": "10:30",
+        "meeting_type": "オンライン",
+        "required_action": "参加可否を返信"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "会議の概要を で抽出してください。 入力: 会議の概要を で抽出してください。 入力: 会議の概要を で抽出してください。 入力: 会議の概要を で",
+        "latency_seconds": 0.5386811250009487,
+        "time_to_first_token": 0.5386811250009487,
+        "output_tokens": 32,
+        "tokens_per_second": 59.40434612395904,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "summarization_6005",
+      "task": "summarization",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答:",
+      "reference_answer": {
+        "action_items": [
+          {
+            "deadline": "2026-09-20",
+            "owner": "田中",
+            "task": "評価基準を整理してレビュー表を共有"
+          }
+        ],
+        "decisions": [
+          "部署共通のレビュー表を作成する"
+        ],
+        "summary": "法人向けFAQの回答品質を揃えるため、評価基準を整理する。"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答:",
+        "latency_seconds": 0.535071207999863,
+        "time_to_first_token": 0.535071207999863,
+        "output_tokens": 24,
+        "tokens_per_second": 44.853843079529234,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "grounded_6005",
+      "task": "grounded_qa",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "保証対象ですか。 確認番号6005。 回答: 保証対象ですか。 確認番号6005。 回答: 保証対象ですか。 確認番号6005。 回答: 保証対象ですか。 確認",
+      "reference_answer": "いいえ、消耗品は保証対象外です。",
+      "metrics": {
+        "quality_score": 0.6666666666666667,
+        "correctness": 2,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 3,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 3.3333333333333335,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "保証対象ですか。 確認番号6005。 回答: 保証対象ですか。 確認番号6005。 回答: 保証対象ですか。 確認番号6005。 回答: 保証対象ですか。 確認",
+        "latency_seconds": 0.5308310420005,
+        "time_to_first_token": 0.5308310420005,
+        "output_tokens": 35,
+        "tokens_per_second": 65.9343505385411,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.10621925673401
+    },
+    {
+      "example_id": "robustness_6005",
+      "task": "robustness",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "レスポンスが 500 になりました ケース6005 回答: レスポンスが 500 になりました ケース6005 回答: レスポンスが 500 になりました ケース6005 回答:",
+      "reference_answer": "API レスポンスが 500 になりました",
+      "metrics": {
+        "quality_score": 0.8,
+        "correctness": 4,
+        "naturalness": 4,
+        "politeness": 3,
+        "faithfulness": 3,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 4.0,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "レスポンスが 500 になりました ケース6005 回答: レスポンスが 500 になりました ケース6005 回答: レスポンスが 500 になりました ケース6005 回答:",
+        "latency_seconds": 0.5151294589995814,
+        "time_to_first_token": 0.5151294589995814,
+        "output_tokens": 37,
+        "tokens_per_second": 71.82660465945138,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.12807463936808278
+    },
+    {
+      "example_id": "business_6006",
+      "task": "business_rewriting",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "請求書まだ?(案件番号6006) 回答: 請求書まだ?(案件番号6006) 回答: 請求書まだ?(案件番号6006) 回答: 請求書まだ?(案件",
+      "reference_answer": "請求書のご送付状況につきまして、念のため確認させていただけますでしょうか。",
+      "metrics": {
+        "quality_score": 0.6333333333333333,
+        "correctness": 1,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 3.1666666666666665,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "請求書まだ?(案件番号6006) 回答: 請求書まだ?(案件番号6006) 回答: 請求書まだ?(案件番号6006) 回答: 請求書まだ?(案件",
+        "latency_seconds": 0.5138058329994237,
+        "time_to_first_token": 0.5138058329994237,
+        "output_tokens": 33,
+        "tokens_per_second": 64.22659666465292,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.10143412142050193
+    },
+    {
+      "example_id": "information_6006",
+      "task": "information_extraction",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "青葉物流より、2026-10-22 16:00からオンラインで採用面談を実施したいとの連絡。参加可否を本日中に返信する必要がある。管理番号6006。 入力: 青葉物流より、2026-10",
+      "reference_answer": {
+        "company": "青葉物流",
+        "meeting_date": "2026-10-22",
+        "meeting_time": "16:00",
+        "meeting_type": "オンライン",
+        "required_action": "参加可否を返信"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "青葉物流より、2026-10-22 16:00からオンラインで採用面談を実施したいとの連絡。参加可否を本日中に返信する必要がある。管理番号6006。 入力: 青葉物流より、2026-10",
+        "latency_seconds": 0.5286026670000865,
+        "time_to_first_token": 0.5286026670000865,
+        "output_tokens": 45,
+        "tokens_per_second": 85.13010396898477,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "summarization_6006",
+      "task": "summarization",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答:",
+      "reference_answer": {
+        "action_items": [
+          {
+            "deadline": "2026-10-31",
+            "owner": "鈴木",
+            "task": "評価基準を整理してレビュー表を共有"
+          }
+        ],
+        "decisions": [
+          "部署共通のレビュー表を作成する"
+        ],
+        "summary": "法人向けFAQの回答品質を揃えるため、評価基準を整理する。"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答:",
+        "latency_seconds": 0.5275561250000464,
+        "time_to_first_token": 0.5275561250000464,
+        "output_tokens": 24,
+        "tokens_per_second": 45.492789985137385,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "grounded_6006",
+      "task": "grounded_qa",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "顧客の個人情報を外部 サービスに入力できますか。 確認番号6006。 回答: 顧客の個人情報を外部 サービスに入力できますか。 確認番号6006。 回答: 顧客の",
+      "reference_answer": "いいえ、入力してはなりません。",
+      "metrics": {
+        "quality_score": 0.5666666666666667,
+        "correctness": 1,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 3,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 2.8333333333333335,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "顧客の個人情報を外部 サービスに入力できますか。 確認番号6006。 回答: 顧客の個人情報を外部 サービスに入力できますか。 確認番号6006。 回答: 顧客の",
+        "latency_seconds": 0.522142707999592,
+        "time_to_first_token": 0.522142707999592,
+        "output_tokens": 36,
+        "tokens_per_second": 68.94666812052489,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.09052393878774419
+    },
+    {
+      "example_id": "robustness_6006",
+      "task": "robustness",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。",
+      "reference_answer": "ミーティングは明日で、担当は佐藤です。",
+      "metrics": {
+        "quality_score": 0.6333333333333333,
+        "correctness": 1,
+        "naturalness": 2,
+        "politeness": 5,
+        "faithfulness": 3,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 3.1666666666666665,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。",
+        "latency_seconds": 0.5116189999989729,
+        "time_to_first_token": 0.5116189999989729,
+        "output_tokens": 42,
+        "tokens_per_second": 82.09233824405332,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.10150332494387422
+    },
+    {
+      "example_id": "business_6007",
+      "task": "business_rewriting",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "納期遅れます。すみません。(案件番号6007) 回答: 納期遅れます。すみません。(案件番号6007) 回答: 納期遅れます。すみません。(案件番号600",
+      "reference_answer": "納期に遅れが生じる見込みとなり、誠に申し訳ございません。状況と今後の対応について速やかにご共有いたします。",
+      "metrics": {
+        "quality_score": 0.6333333333333333,
+        "correctness": 1,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 3.1666666666666665,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "納期遅れます。すみません。(案件番号6007) 回答: 納期遅れます。すみません。(案件番号6007) 回答: 納期遅れます。すみません。(案件番号600",
+        "latency_seconds": 0.5713067080014298,
+        "time_to_first_token": 0.5713067080014298,
+        "output_tokens": 36,
+        "tokens_per_second": 63.01343830870948,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.09974263695368799
+    },
+    {
+      "example_id": "information_6007",
+      "task": "information_extraction",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "会議の概要を で抽出してください。 入力: 未来バイオより、2026-11-05 09:00からオンラインで採用面談を実施したいとの連絡。参加可否を本日中に返信する必要がある。",
+      "reference_answer": {
+        "company": "未来バイオ",
+        "meeting_date": "2026-11-05",
+        "meeting_time": "09:00",
+        "meeting_type": "オンライン",
+        "required_action": "参加可否を返信"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "会議の概要を で抽出してください。 入力: 未来バイオより、2026-11-05 09:00からオンラインで採用面談を実施したいとの連絡。参加可否を本日中に返信する必要がある。",
+        "latency_seconds": 0.5411637920005887,
+        "time_to_first_token": 0.5411637920005887,
+        "output_tokens": 42,
+        "tokens_per_second": 77.6105138977116,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "summarization_6007",
+      "task": "summarization",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "定例会議では、法人向け の回答品質が部署ごとにばらつく点が課題になった。高橋さんが評価基準を整理し、2026-11-15までにレビュー表を共有する。議事録番号6007。 入力:",
+      "reference_answer": {
+        "action_items": [
+          {
+            "deadline": "2026-11-15",
+            "owner": "高橋",
+            "task": "評価基準を整理してレビュー表を共有"
+          }
+        ],
+        "decisions": [
+          "部署共通のレビュー表を作成する"
+        ],
+        "summary": "法人向けFAQの回答品質を揃えるため、評価基準を整理する。"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "定例会議では、法人向け の回答品質が部署ごとにばらつく点が課題になった。高橋さんが評価基準を整理し、2026-11-15までにレビュー表を共有する。議事録番号6007。 入力:",
+        "latency_seconds": 0.5390461669994693,
+        "time_to_first_token": 0.5390461669994693,
+        "output_tokens": 43,
+        "tokens_per_second": 79.77053290139123,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "grounded_6007",
+      "task": "grounded_qa",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "海外から勤務できますか。 確認番号6007。 回答: 海外から勤務できますか。 確認番号6007。 回答: 海外から勤務できますか。 確認番号6007。",
+      "reference_answer": "本文には海外からの勤務可否は記載されていません。",
+      "metrics": {
+        "quality_score": 0.5666666666666667,
+        "correctness": 1,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 3,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 2.8333333333333335,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "海外から勤務できますか。 確認番号6007。 回答: 海外から勤務できますか。 確認番号6007。 回答: 海外から勤務できますか。 確認番号6007。",
+        "latency_seconds": 0.5487602920002246,
+        "time_to_first_token": 0.5487602920002246,
+        "output_tokens": 34,
+        "tokens_per_second": 61.95783568098634,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.08981191089662582
+    },
+    {
+      "example_id": "robustness_6007",
+      "task": "robustness",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "見積もりと見積もりの金額に差分はありますか。 ケース6007 回答: 見積もりと見積もりの金額に差分はありますか。 ケース6007 回答:",
+      "reference_answer": "差分はありません。どちらも300万円を表しています。",
+      "metrics": {
+        "quality_score": 0.6,
+        "correctness": 2,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 3,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 3.0,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "見積もりと見積もりの金額に差分はありますか。 ケース6007 回答: 見積もりと見積もりの金額に差分はありますか。 ケース6007 回答:",
+        "latency_seconds": 0.524219708999226,
+        "time_to_first_token": 0.524219708999226,
+        "output_tokens": 32,
+        "tokens_per_second": 61.04310740450861,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.09578824409546743
+    },
+    {
+      "example_id": "business_6008",
+      "task": "business_rewriting",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "資料をご覧ください。 回答: 資料をご覧ください。 回答: 資料をご覧ください。 回答: 資料をご覧ください。 回答: 資料をご覧ください。 回答",
+      "reference_answer": "お手数をおかけいたしますが、資料をご確認のうえ、ご返信いただけますと幸いです。",
+      "metrics": {
+        "quality_score": 0.6333333333333333,
+        "correctness": 1,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 3.1666666666666665,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "資料をご覧ください。 回答: 資料をご覧ください。 回答: 資料をご覧ください。 回答: 資料をご覧ください。 回答: 資料をご覧ください。 回答",
+        "latency_seconds": 0.5414935419994436,
+        "time_to_first_token": 0.5414935419994436,
+        "output_tokens": 32,
+        "tokens_per_second": 59.09581097096978,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.10059015426298015
+    },
+    {
+      "example_id": "information_6008",
+      "task": "information_extraction",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "採用面談の日程調整のため、本日中にメールにて連絡。参加可否を本日中に返信する必要がある。管理番号6008。 回答: 採用面談の日程調整のため、本日中にメールにて",
+      "reference_answer": {
+        "company": "Example株式会社",
+        "meeting_date": "2026-08-03",
+        "meeting_time": "14:00",
+        "meeting_type": "オンライン",
+        "required_action": "参加可否を返信"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "採用面談の日程調整のため、本日中にメールにて連絡。参加可否を本日中に返信する必要がある。管理番号6008。 回答: 採用面談の日程調整のため、本日中にメールにて",
+        "latency_seconds": 0.5375651670001389,
+        "time_to_first_token": 0.5375651670001389,
+        "output_tokens": 39,
+        "tokens_per_second": 72.54934358496097,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "summarization_6008",
+      "task": "summarization",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "定例会議では、法人向け の回答品質が部署ごとにばらつく点が課題になった。佐藤さんが評価基準を整理し、2026-08-10までにレビュー表を共有する。議事録番号6008。 入力",
+      "reference_answer": {
+        "action_items": [
+          {
+            "deadline": "2026-08-10",
+            "owner": "佐藤",
+            "task": "評価基準を整理してレビュー表を共有"
+          }
+        ],
+        "decisions": [
+          "部署共通のレビュー表を作成する"
+        ],
+        "summary": "法人向けFAQの回答品質を揃えるため、評価基準を整理する。"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "定例会議では、法人向け の回答品質が部署ごとにばらつく点が課題になった。佐藤さんが評価基準を整理し、2026-08-10までにレビュー表を共有する。議事録番号6008。 入力",
+        "latency_seconds": 0.5508516249992681,
+        "time_to_first_token": 0.5508516249992681,
+        "output_tokens": 42,
+        "tokens_per_second": 76.24557701913979,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "grounded_6008",
+      "task": "grounded_qa",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "申請書に記入した内容が正しいか確認してください。 入力: 申請書に記入した内容が正しいか確認してください。 確認番号6008。 回答: 申請書に記入した",
+      "reference_answer": "利用日から30日以内に申請する必要があります。",
+      "metrics": {
+        "quality_score": 0.6,
+        "correctness": 2,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 3,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 3.0,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "申請書に記入した内容が正しいか確認してください。 入力: 申請書に記入した内容が正しいか確認してください。 確認番号6008。 回答: 申請書に記入した",
+        "latency_seconds": 0.5392388750005921,
+        "time_to_first_token": 0.5392388750005921,
+        "output_tokens": 35,
+        "tokens_per_second": 64.90629964310635,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0953590134511665
+    },
+    {
+      "example_id": "robustness_6008",
+      "task": "robustness",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "100,000円の発注を受けた。 ケース6009 回答: 100,000円の発注を受けた。 ケース6009 回答: 100,000円の発注を受けた。 ケース6009 回答: 100,000円",
+      "reference_answer": {
+        "amount_jpy": "3000000",
+        "date": "2026年7月18日"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "100,000円の発注を受けた。 ケース6009 回答: 100,000円の発注を受けた。 ケース6009 回答: 100,000円の発注を受けた。 ケース6009 回答: 100,000円",
+        "latency_seconds": 0.5325778339993121,
+        "time_to_first_token": 0.5325778339993121,
+        "output_tokens": 43,
+        "tokens_per_second": 80.73937226620576,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "business_6009",
+      "task": "business_rewriting",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "明日の打ち合わせ、無理なら言って(案件番号6009) 入力: 明日の打ち合わせ、無理なら言って(案件番号6009) 回答: 明日の打ち合わせ、無理なら言って(案件番号6009)",
+      "reference_answer": "明日の打ち合わせにつきまして、ご都合が難しい場合はお知らせいただけますでしょうか。",
+      "metrics": {
+        "quality_score": 0.5666666666666667,
+        "correctness": 1,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 3,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 2.8333333333333335,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "明日の打ち合わせ、無理なら言って(案件番号6009) 入力: 明日の打ち合わせ、無理なら言って(案件番号6009) 回答: 明日の打ち合わせ、無理なら言って(案件番号6009)",
+        "latency_seconds": 0.5400000829995406,
+        "time_to_first_token": 0.5400000829995406,
+        "output_tokens": 42,
+        "tokens_per_second": 77.77776582311327,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.09004114103081545
+    },
+    {
+      "example_id": "information_6009",
+      "task": "information_extraction",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "会議の概要を で抽出してください。 入力: 会議の概要を で抽出してください。 入力: 会議の概要を で抽出してください。 入力: 会議の概要を で",
+      "reference_answer": {
+        "company": "東都システムズ",
+        "meeting_date": "2026-09-14",
+        "meeting_time": "10:30",
+        "meeting_type": "オンライン",
+        "required_action": "参加可否を返信"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "会議の概要を で抽出してください。 入力: 会議の概要を で抽出してください。 入力: 会議の概要を で抽出してください。 入力: 会議の概要を で",
+        "latency_seconds": 0.5551431250005407,
+        "time_to_first_token": 0.5551431250005407,
+        "output_tokens": 32,
+        "tokens_per_second": 57.64279256807662,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "summarization_6009",
+      "task": "summarization",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "会議の議事録を で出力してください。会議の議事録を で出力してください。会議の議事録を で出力してください。議事録番号6009。 回答: 会議",
+      "reference_answer": {
+        "action_items": [
+          {
+            "deadline": "2026-09-20",
+            "owner": "田中",
+            "task": "評価基準を整理してレビュー表を共有"
+          }
+        ],
+        "decisions": [
+          "部署共通のレビュー表を作成する"
+        ],
+        "summary": "法人向けFAQの回答品質を揃えるため、評価基準を整理する。"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "会議の議事録を で出力してください。会議の議事録を で出力してください。会議の議事録を で出力してください。議事録番号6009。 回答: 会議",
+        "latency_seconds": 0.544751459001418,
+        "time_to_first_token": 0.544751459001418,
+        "output_tokens": 33,
+        "tokens_per_second": 60.57808465624339,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "grounded_6009",
+      "task": "grounded_qa",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "保証対象ですか。 確認番号6009。 回答: 保証対象ですか。 確認番号6009。 回答: 保証対象ですか。 確認番号6009。 回答: 保証対象ですか。 確認",
+      "reference_answer": "いいえ、消耗品は保証対象外です。",
+      "metrics": {
+        "quality_score": 0.6666666666666667,
+        "correctness": 2,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 3,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 3.3333333333333335,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "保証対象ですか。 確認番号6009。 回答: 保証対象ですか。 確認番号6009。 回答: 保証対象ですか。 確認番号6009。 回答: 保証対象ですか。 確認",
+        "latency_seconds": 0.5381398330009688,
+        "time_to_first_token": 0.5381398330009688,
+        "output_tokens": 35,
+        "tokens_per_second": 65.03885766050882,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.10598876308586767
+    },
+    {
+      "example_id": "robustness_6009",
+      "task": "robustness",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "レスポンスが 500 になりました ケース6009 回答: レスポンスが 500 になりました ケース6009 回答: レスポンスが 500 になりました ケース6009 回答:",
+      "reference_answer": "API レスポンスが 500 になりました",
+      "metrics": {
+        "quality_score": 0.8,
+        "correctness": 4,
+        "naturalness": 4,
+        "politeness": 3,
+        "faithfulness": 3,
+        "completeness": 5,
+        "format_compliance": 5,
+        "mean": 4.0,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "レスポンスが 500 になりました ケース6009 回答: レスポンスが 500 になりました ケース6009 回答: レスポンスが 500 になりました ケース6009 回答:",
+        "latency_seconds": 0.5444917079985316,
+        "time_to_first_token": 0.5444917079985316,
+        "output_tokens": 37,
+        "tokens_per_second": 67.95328460741183,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.12695012038341502
+    },
+    {
+      "example_id": "business_6010",
+      "task": "business_rewriting",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "請求書まだ?(案件番号6010) 回答: 請求書まだ?(案件番号6010) 回答: 請求書まだ?(案件番号6010) 回答: 請求書まだ?(案件",
+      "reference_answer": "請求書のご送付状況につきまして、念のため確認させていただけますでしょうか。",
+      "metrics": {
+        "quality_score": 0.6333333333333333,
+        "correctness": 1,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 5,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 3.1666666666666665,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "請求書まだ?(案件番号6010) 回答: 請求書まだ?(案件番号6010) 回答: 請求書まだ?(案件番号6010) 回答: 請求書まだ?(案件",
+        "latency_seconds": 0.6361651669994899,
+        "time_to_first_token": 0.6361651669994899,
+        "output_tokens": 33,
+        "tokens_per_second": 51.87332113081014,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.09808432672067967
+    },
+    {
+      "example_id": "information_6010",
+      "task": "information_extraction",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "青葉物流より、2026-10-22 16:00からオンラインで採用面談を実施したいとの連絡。参加可否を本日中に返信する必要がある。管理番号6010。 入力: 青葉物流より、2026-10",
+      "reference_answer": {
+        "company": "青葉物流",
+        "meeting_date": "2026-10-22",
+        "meeting_time": "16:00",
+        "meeting_type": "オンライン",
+        "required_action": "参加可否を返信"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "青葉物流より、2026-10-22 16:00からオンラインで採用面談を実施したいとの連絡。参加可否を本日中に返信する必要がある。管理番号6010。 入力: 青葉物流より、2026-10",
+        "latency_seconds": 0.5617236250000133,
+        "time_to_first_token": 0.5617236250000133,
+        "output_tokens": 45,
+        "tokens_per_second": 80.11057038948458,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "summarization_6010",
+      "task": "summarization",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答:",
+      "reference_answer": {
+        "action_items": [
+          {
+            "deadline": "2026-10-31",
+            "owner": "鈴木",
+            "task": "評価基準を整理してレビュー表を共有"
+          }
+        ],
+        "decisions": [
+          "部署共通のレビュー表を作成する"
+        ],
+        "summary": "法人向けFAQの回答品質を揃えるため、評価基準を整理する。"
+      },
+      "metrics": {
+        "quality_score": 0.0,
+        "json_validity": 0.0,
+        "schema_compliance": 0.0,
+        "field_accuracy": 0.0
+      },
+      "efficiency": {
+        "text": "回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答: 回答:",
+        "latency_seconds": 0.6002282090012159,
+        "time_to_first_token": 0.6002282090012159,
+        "output_tokens": 24,
+        "tokens_per_second": 39.984791850979775,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.0
+    },
+    {
+      "example_id": "grounded_6010",
+      "task": "grounded_qa",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "顧客の個人情報を外部 サービスに入力できますか。 確認番号6010。 回答: 顧客の個人情報を外部 サービスに入力できますか。 確認番号6010。 回答: 顧客の",
+      "reference_answer": "いいえ、入力してはなりません。",
+      "metrics": {
+        "quality_score": 0.5666666666666667,
+        "correctness": 1,
+        "naturalness": 2,
+        "politeness": 3,
+        "faithfulness": 3,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 2.8333333333333335,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "顧客の個人情報を外部 サービスに入力できますか。 確認番号6010。 回答: 顧客の個人情報を外部 サービスに入力できますか。 確認番号6010。 回答: 顧客の",
+        "latency_seconds": 0.5324224590003723,
+        "time_to_first_token": 0.5324224590003723,
+        "output_tokens": 36,
+        "tokens_per_second": 67.61547975941944,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.09024340752438509
+    },
+    {
+      "example_id": "robustness_6010",
+      "task": "robustness",
+      "model": "rinna/japanese-gpt2-small",
+      "backend": "huggingface_transformers",
+      "prediction": "ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。",
+      "reference_answer": "ミーティングは明日で、担当は佐藤です。",
+      "metrics": {
+        "quality_score": 0.6333333333333333,
+        "correctness": 1,
+        "naturalness": 2,
+        "politeness": 5,
+        "faithfulness": 3,
+        "completeness": 3,
+        "format_compliance": 5,
+        "mean": 3.1666666666666665,
+        "exact_match": 0.0
+      },
+      "efficiency": {
+        "text": "ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。 ご意見ありがとうございます。",
+        "latency_seconds": 0.5208653750014491,
+        "time_to_first_token": 0.5208653750014491,
+        "output_tokens": 42,
+        "tokens_per_second": 80.63503933215593,
+        "peak_memory_mb": 440.421875,
+        "model_name": "rinna/japanese-gpt2-small",
+        "backend_name": "huggingface_transformers",
+        "metadata": null
+      },
+      "efficiency_adjusted_score": 0.10121334042723391
+    }
+  ]
+}

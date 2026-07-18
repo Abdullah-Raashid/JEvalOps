@@ -2,7 +2,7 @@
 
 Japanese Enterprise LLM Evaluation & Adaptation.
 
-JEvalOps is a reproducible framework for curating governed Japanese enterprise datasets, benchmarking LLMs across quality and efficiency dimensions, performing Japanese-specific error analysis, and preparing targeted LoRA fine-tuning data.
+JEvalOps is a reproducible framework for curating governed Japanese enterprise datasets, benchmarking LLMs across quality and efficiency dimensions, performing Japanese-specific error analysis, and adapting compact models with targeted LoRA fine-tuning.
 
 ## Why This Exists
 
@@ -43,6 +43,21 @@ make report
 
 The default backend is deterministic and local, so the full smoke path runs without downloading models. Use the Hugging Face or vLLM adapters once you select real model IDs and hardware.
 
+## Fine-Tuning Result
+
+The repository includes a CPU-run LoRA adapter for `rinna/japanese-gpt2-small`, trained on the generated SFT split and evaluated against the frozen test split.
+
+- Evaluation slice: 50 held-out test examples.
+- Baseline quality: `0.3533`.
+- LoRA quality: `0.4873`.
+- Relative quality lift: `+37.92%`.
+- Baseline P95 latency: `0.6362s`.
+- LoRA P95 latency: `0.6265s`.
+- P95 latency delta: `-0.0097s`.
+- Labeled error count: `50 -> 30`.
+
+The adapter improves business rewriting, grounded QA, and robustness behavior, but it is not promoted by the production gate because JSON schema compliance for extraction/summarization remains below the configured floor. See `reports/rinna_lora/fine_tuning_report.md`.
+
 ## Repository Map
 
 - `src/jevalops/data`: Pydantic schema, JSONL validation, PII checks, normalization, deduplication.
@@ -62,6 +77,28 @@ PYTHONPATH=src python3 scripts/run_baseline.py --dataset data/test.jsonl --outpu
 PYTHONPATH=src python3 scripts/run_error_analysis.py --evaluation reports/baseline_results.json --output reports/error_analysis.json
 PYTHONPATH=src python3 scripts/generate_report.py --evaluation reports/baseline_results.json --errors reports/error_analysis.json --output reports/baseline_report.md
 ```
+
+LoRA reproduction:
+
+```bash
+python3 -m pip install -e ".[train]"
+PYTHONPATH=src python3 scripts/run_finetuning_experiment.py \
+  --model-name rinna/japanese-gpt2-small \
+  --adapter-dir checkpoints/rinna_japanese_gpt2_small_lora \
+  --reports-dir reports/rinna_lora \
+  --eval-limit 50 \
+  --eval-max-new-tokens 48 \
+  --max-steps 200 \
+  --max-length 192 \
+  --learning-rate 0.001 \
+  --lora-r 16 \
+  --lora-alpha 32 \
+  --device cpu \
+  --target-modules c_attn c_proj c_fc \
+  --slow-tokenizer
+```
+
+To log the experiment to MLflow, install `.[tracking]` and add `--mlflow-experiment jevalops-lora`.
 
 ## API
 

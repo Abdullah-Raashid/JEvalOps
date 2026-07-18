@@ -1,0 +1,36 @@
+{
+  "base_model": "rinna/japanese-gpt2-small",
+  "adapter_path": "checkpoints/rinna_japanese_gpt2_small_lora",
+  "train_records": 300,
+  "validation_records": 100,
+  "training_seconds": 51.06903483399947,
+  "final_train_loss": 0.027089163661003113,
+  "mean_train_loss": 0.7600877882749774,
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": [
+      "c_attn",
+      "c_proj",
+      "c_fc"
+    ],
+    "resolved_target_modules": [
+      "c_attn",
+      "c_proj",
+      "c_fc"
+    ]
+  },
+  "training": {
+    "learning_rate": 0.001,
+    "max_steps": 200,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 4,
+    "max_length": 192,
+    "seed": 42,
+    "device": "cpu",
+    "logging_steps": 10,
+    "use_fast_tokenizer": false,
+    "resolved_device": "cpu"
+  }
+}

@@ -10,6 +10,14 @@ build/
 *.egg-info/
 .DS_Store
 reports/figures/*.png
+reports/smoke_lora/
+reports/qwen_lora/
 mlruns/
-checkpoints/
+checkpoints/*
+!checkpoints/rinna_japanese_gpt2_small_lora/
+!checkpoints/rinna_japanese_gpt2_small_lora/README.md
+!checkpoints/rinna_japanese_gpt2_small_lora/adapter_config.json
+!checkpoints/rinna_japanese_gpt2_small_lora/adapter_model.safetensors
+!checkpoints/rinna_japanese_gpt2_small_lora/training_metrics.json
+checkpoints/rinna_japanese_gpt2_small_lora/tokenizer*.json
 outputs/

@@ -1,0 +1,24 @@
+{
+  "model_name": "rinna/japanese-gpt2-small",
+  "adapter_dir": "checkpoints/rinna_japanese_gpt2_small_lora",
+  "eval_examples": 50,
+  "baseline_quality": 0.35333333333333333,
+  "lora_quality": 0.4873333333333333,
+  "absolute_quality_delta": 0.13399999999999995,
+  "relative_quality_delta_percent": 37.92452830188678,
+  "baseline_p95_latency_seconds": 0.6361651669994899,
+  "lora_p95_latency_seconds": 0.6264907920012774,
+  "p95_latency_delta_seconds": -0.009674374998212443,
+  "baseline_error_count": 50,
+  "lora_error_count": 30,
+  "promotion": {
+    "promoted": false,
+    "checks": {
+      "quality_improves": true,
+      "no_critical_task_drop": true,
+      "p95_latency_within_limit": true,
+      "schema_compliance_above_floor": false
+    },
+    "quality_delta": 0.13399999999999995
+  }
+}
