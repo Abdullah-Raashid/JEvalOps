@@ -71,7 +71,7 @@ def main() -> None:
 def _summarize(model_name: str, adapter_dir: Path, baseline: dict, candidate: dict, eval_examples: int) -> dict:
     baseline_errors = analyze_errors(baseline)
     candidate_errors = analyze_errors(candidate)
-    return {
+    summary = {
         "model_name": model_name,
         "adapter_dir": str(adapter_dir),
         "eval_examples": eval_examples,
@@ -86,6 +86,10 @@ def _summarize(model_name: str, adapter_dir: Path, baseline: dict, candidate: di
         "lora_error_count": candidate_errors["error_count"],
         "promotion": evaluate_promotion(baseline, candidate),
     }
+    training_metrics_path = adapter_dir / "training_metrics.json"
+    if training_metrics_path.exists():
+        summary["training"] = json.loads(training_metrics_path.read_text(encoding="utf-8"))
+    return summary
 
 
 def _relative_delta_percent(baseline: float, candidate: float) -> float:
@@ -128,8 +132,35 @@ def _render_report(summary: dict, baseline: dict, candidate: dict) -> str:
             f"Promoted: **{summary['promotion']['promoted']}**",
             *[f"- `{name}`: {passed}" for name, passed in summary["promotion"]["checks"].items()],
             "",
+            *_render_training_lines(summary.get("training")),
         ]
     )
+
+
+def _render_training_lines(training: dict | None) -> list[str]:
+    if not training:
+        return []
+    accelerator = training.get("accelerator", {})
+    lines = [
+        "## Training",
+        "",
+        f"- Training examples: {training.get('train_records', 0)}",
+        f"- Validation examples: {training.get('validation_records', 0)}",
+        f"- Training seconds: {training.get('training_seconds', 0):.2f}",
+        f"- Final train loss: {training.get('final_train_loss', 0):.4f}",
+        f"- Mean train loss: {training.get('mean_train_loss', 0):.4f}",
+    ]
+    if accelerator:
+        lines.extend(
+            [
+                f"- Resolved device: `{accelerator.get('resolved_device')}`",
+                f"- Accelerator: `{accelerator.get('accelerator')}`",
+                f"- Peak accelerator memory: {training.get('peak_accelerator_memory_mb', 0):.2f} MB",
+                f"- MPS fallback enabled: {accelerator.get('mps_fallback_enabled')}",
+            ]
+        )
+    lines.append("")
+    return lines
 
 
 if __name__ == "__main__":

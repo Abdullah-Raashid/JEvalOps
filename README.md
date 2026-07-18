@@ -45,21 +45,21 @@ The default backend is deterministic and local, so the full smoke path runs with
 
 ## Fine-Tuning Result
 
-The repository includes an Apple Metal/MPS LoRA adapter for `rinna/japanese-gpt2-small`, trained on the generated SFT split and evaluated against the frozen test split on an M-series Mac.
+The repository includes an Apple Metal/MPS LoRA adapter for `rinna/japanese-gpt2-small`, trained on the generated SFT split and evaluated against the full frozen test split on an M-series Mac.
 
-- Evaluation slice: 50 held-out test examples.
-- Baseline quality: `0.3533`.
-- LoRA quality: `0.5507`.
-- Relative quality lift: `+55.85%`.
-- Baseline P95 latency: `0.5894s`.
-- LoRA P95 latency: `0.6038s`.
-- P95 latency delta: `+0.0145s`.
-- Labeled error count: `50 -> 23`.
+- Evaluation set: 250 held-out test examples.
+- Baseline quality: `0.3473`.
+- LoRA quality: `0.5428`.
+- Relative quality lift: `+56.28%`.
+- Baseline P95 latency: `0.6771s`.
+- LoRA P95 latency: `0.6132s`.
+- P95 latency delta: `-0.0639s`.
+- Labeled error count: `250 -> 123`.
 - Training time: `18.10s`.
 - Peak accelerator memory: `515.08 MB`.
 - Resolved accelerator: `apple_metal_mps`.
 
-The adapter improves business rewriting, grounded QA, and robustness behavior, but it is not promoted by the production gate because JSON schema compliance for extraction/summarization remains below the configured floor. See `reports/rinna_lora_mps/fine_tuning_report.md`.
+The adapter improves business rewriting, grounded QA, and robustness behavior, but it is not promoted by the production gate because JSON schema compliance for extraction/summarization remains below the configured floor. See `reports/rinna_lora_mps_full/fine_tuning_report.md`.
 
 ## Apple Metal / MPS Acceleration
 
@@ -82,8 +82,8 @@ python3 -m pip install -e ".[train]"
 PYTORCH_ENABLE_MPS_FALLBACK=1 PYTHONPATH=src python3 scripts/run_finetuning_experiment.py \
   --model-name rinna/japanese-gpt2-small \
   --adapter-dir checkpoints/rinna_japanese_gpt2_small_lora_mps \
-  --reports-dir reports/rinna_lora_mps \
-  --eval-limit 50 \
+  --reports-dir reports/rinna_lora_mps_full \
+  --eval-limit 0 \
   --eval-max-new-tokens 48 \
   --max-steps 200 \
   --max-length 192 \
@@ -125,8 +125,8 @@ python3 -m pip install -e ".[train]"
 PYTORCH_ENABLE_MPS_FALLBACK=1 PYTHONPATH=src python3 scripts/run_finetuning_experiment.py \
   --model-name rinna/japanese-gpt2-small \
   --adapter-dir checkpoints/rinna_japanese_gpt2_small_lora_mps \
-  --reports-dir reports/rinna_lora_mps \
-  --eval-limit 50 \
+  --reports-dir reports/rinna_lora_mps_full \
+  --eval-limit 0 \
   --eval-max-new-tokens 48 \
   --max-steps 200 \
   --max-length 192 \
